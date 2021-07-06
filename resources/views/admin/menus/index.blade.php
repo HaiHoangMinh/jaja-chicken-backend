@@ -2,7 +2,7 @@
 {{-- Tìm layout->admin de extend  --}}
 
 @section('title')
-    <title>Trang menu</title>
+    <title>Trang quản lý thực đơn</title>
 
 @endsection
 
@@ -21,8 +21,8 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Tên món ăn</th>
-                <th scope="col">Action</th>
+                <th scope="col">Tên thực đơn</th>
+                <th scope="col">Thao tác</th>
               </tr>
             </thead>
             <tbody>

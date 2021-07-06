@@ -16,7 +16,7 @@ use App\Menu;
             foreach ($data as $dataItem ) {
                 
                $this->html .= '<option value = "' . $dataItem->id. '">'. $subMark . $dataItem->name. '</option>';
-               $this->menuRecusiveAdd($dataItem->id, $subMark = '--');
+               $this->menuRecusiveAdd($dataItem->id, $subMark = '-');
             }
             
             return $this->html;

@@ -2,7 +2,7 @@
 {{-- Tìm layout->admin de extend  --}}
 
 @section('title')
-    <title>Thêm sản phẩm</title>
+    <title>Trang quản lý món ăn</title>
 
 @endsection
 
@@ -12,8 +12,8 @@
 @endsection
 
 @section('js')
-    <title>Thêm sản phẩm</title>
-
+  <script src="{{asset('vendor/sweetAlert2/sweetalert2@11.js')}}"></script>
+  <script src="{{asset('admins/product/index/list.js')}}"></script>
 @endsection
 
 @section('content')
@@ -31,11 +31,11 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Tên sản phẩm</th>
+                <th scope="col">Tên món ăn</th>
                 <th scope="col">Giá</th>
                 <th scope="col">Hình ảnh</th>
                 <th scope="col">Danh mục</th>
-                <th scope="col">Action</th>
+                <th scope="col">Thao tác</th>
               </tr>
             </thead>
             <tbody>
@@ -50,7 +50,10 @@
             <td>{{ optional($productItem->category)->name }}</td>
             <td>
               <a href="{{ route('products.edit', ['id'=> $productItem->id]) }}" class="btn btn-default ">Edit</a>
-              <a href="{{ route('products.delete', ['id'=> $productItem->id]) }}" class="btn btn-danger ">Delete</a>
+              <a 
+              {{-- data-url: Sinh duong dan url truy xuat --}}
+              data-url="{{ route('products.delete', ['id'=> $productItem->id]) }}"
+              href="" class="btn btn-danger action_delete ">Delete</a>
             </td>
             </tr>
           @endforeach

@@ -13,7 +13,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{asset('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
+  <link rel="stylesheet" href="{{asset('adminlte/plugins/daterangepicker/daterangepicker.css')}}">
   <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css')}}">
+  <link rel="shortcut icon" href="https://scontent.fpnh22-3.fna.fbcdn.net/v/t1.6435-9/161717683_210969530832330_5178469175515308511_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=cMOcqUWoHtwAX-zuxhR&_nc_ht=scontent.fpnh22-3.fna&oh=b5d0f8422e63b9d7bb0edc7139720dbd&oe=60E70F7C" />
   @yield('css')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -37,6 +39,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('adminlte/dist/js/adminlte.min.js')}}"></script>
+<script src="{{asset('adminlte/plugins/moment/moment.min.js')}}"></script>
+<script src="{{asset('adminlte/plugins/daterangepicker/daterangepicker.js')}}"></script>
 @yield('js')
 </body>
 </html>

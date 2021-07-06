@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
+    use SoftDeletes;
     // Init Relationship -> get data
     protected $guarded =[];
     public function images(){
@@ -13,6 +15,10 @@ class Product extends Model
     }
     public function tags(){
         return $this->belongsToMany(Tag::class,'product_tags','product_id','tag_id');
+        //
+    }
+    public function bills(){
+        return $this->belongsToMany(Bill::class,'bill_detail','product_id','order_id');
         //
     }
     // Load danh muc chua san pham

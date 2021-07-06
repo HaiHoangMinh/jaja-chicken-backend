@@ -20,8 +20,8 @@
                   @csrf
                   {{-- Sinh ra token bao mat --}}
                     <div class="form-group">
-                      <label >Tên món ăn</label>
-                      <input type="text" class="form-control" placeholder="Nhập tên món ăn"
+                      <label >Tên menu</label>
+                      <input type="text" class="form-control" placeholder="Nhập tên menu"
                              name = "name"
                       >
                     </div>

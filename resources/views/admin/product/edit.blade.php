@@ -2,7 +2,7 @@
 {{-- Tìm layout->admin de extend  --}}
 
 @section('title')
-    <title>Thêm sản phẩm mới</title>
+    <title>Update món ăn</title>
 
 @endsection
 
@@ -28,8 +28,8 @@
                   {{-- Sinh ra token bao mat --}}
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label >Tên sản phẩm</label>
-                        <input type="text" class="form-control" placeholder="Nhập tên sản phẩm"
+                        <label >Tên món ăn</label>
+                        <input type="text" class="form-control" placeholder="Nhập tên món ăn"
                                name = "name"
                                value="{{$product->name}}"
                         >
@@ -37,8 +37,8 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label >Giá sản phẩm</label>
-                        <input type="text" class="form-control" placeholder="Nhập giá sản phẩm"
+                        <label >Giá món ăn</label>
+                        <input type="text" class="form-control" placeholder="Nhập giá món ăn"
                                name = "price"
                                value="{{$product->price}}"
                         >
@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                          <label >Ảnh sản phẩm</label>
+                          <label >Ảnh món ăn</label>
                           <input type="file" class="form-control-file" 
                                  name = "feature_image_path"
                           >
@@ -88,7 +88,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label >Nhập tags cho sản phẩm</label>
+                        <label >Nhập tags cho món ăn</label>
                         <select name="tags[]" class="form-control tag_select_choose" multiple="multiple">
                         @foreach($product->tags as $tagItem)
                           <option value="{{$tagItem->name}}" selected>{{$tagItem->name}}</option>
@@ -98,7 +98,7 @@
                     </div>
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label >Mô tả sản phẩm</label>
+                          <label >Mô tả món ăn</label>
                           <textarea class="form-control my-editor " name="content" rows="8" >{{$product->content}}</textarea>
                         </div>
                       </div>

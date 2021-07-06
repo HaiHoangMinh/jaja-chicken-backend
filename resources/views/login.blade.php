@@ -13,21 +13,26 @@
                 body {
         margin: 0;
         padding: 0;
-        background-color: #17a2b8;
+        background-color: #b88d17;
         height: 100vh;
         }
         #login .container #login-row #login-column #login-box {
-        margin-top: 120px;
+        margin-top: 60px;
         max-width: 600px;
-        height: 320px;
+        height: 420px;
         border: 1px solid #9C9C9C;
         background-color: #EAEAEA;
+        border-radius: 25px;
         }
         #login .container #login-row #login-column #login-box #login-form {
-        padding: 20px;
+        padding: 50px;
+        
         }
         #login .container #login-row #login-column #login-box #login-form #register-link {
-        margin-top: -85px;
+            margin-top: -30px;
+        }
+        .login-sub{
+            padding-top: 15px;
         }
     </style>
 </head>
@@ -50,15 +55,19 @@
                                 <input type="password" name="password" id="password" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="remember-me" class="text-info"><span>Nhớ mật khẩu</span> <span>
+                                
                                 <input id="remember-me" name="remember_me" type="checkbox"></span>
+                                <label for="remember-me" class="text-info"><span>Nhớ mật khẩu</span> <span>
                                 </label>
-                                <br>
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Đăng nhập">
+                                <br/>
+                                <div class="login-sub">
+                                    <input type="submit" name="submit" class="btn btn-info btn-md" value="Đăng nhập">
+                                <div id="register-link" class="text-right">
+                                    <a href="#" class="text-info">Đăng ký ngay</a>
+                                </div>
+                                </div>
                             </div>
-                            <div id="register-link" class="text-right">
-                                <a href="#" class="text-info">Đăng ký ngay</a>
-                            </div>
+                            
                         </form>
                     </div>
                 </div>

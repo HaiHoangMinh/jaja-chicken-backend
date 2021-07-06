@@ -2,7 +2,7 @@
 {{-- Tìm layout->admin de extend  --}}
 
 @section('title')
-    <title>Trang chủ</title>
+    <title>Trang danh mục món ăn</title>
 
 @endsection
 
@@ -22,7 +22,7 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Tên danh mục</th>
-                <th scope="col">Action</th>
+                <th scope="col">Thao tác</th>
               </tr>
             </thead>
             <tbody>

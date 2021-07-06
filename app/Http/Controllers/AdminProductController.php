@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Components\Recusive;
 use App\Category;
+use App\Http\Requests\ProductAddRequest;
 use App\Product;
 use App\ProductImage;
 use App\ProductTag;
@@ -33,6 +34,7 @@ class AdminProductController extends Controller
     public function index() // Hien thi san pham
     {
         $products = $this->product->paginate(5); // Phan trang paginate hien thi (su dung latest() de hien thi theo time insert)
+        //dd(response()->json($this->product->all(),200));
         return view('admin.product.index', compact('products')); // compact: truyen data sang view
     }
     public function getCategory($parentId){
@@ -48,7 +50,7 @@ class AdminProductController extends Controller
     }
 
     
-    public function store(Request $request)
+    public function store(ProductAddRequest $request)
     {
         try {
             DB::beginTransaction();
@@ -147,6 +149,23 @@ class AdminProductController extends Controller
         } catch (\Exception $ex) {
             DB::rollBack(); // Backup lai du lieu khi co loi
             Log::error('Message'.$ex->getMessage().'Line: ' . $ex->getLine());
+        }
+    }
+    public function delete($id)
+    {
+        try {
+            $this->product->find($id)->delete();
+            return response()->json([
+                'code' => 200,
+                'message' => 'success',
+            ], status:200);
+            
+        } catch (\Exception $th) {
+            Log::error('Message'.$th->getMessage().'Line: ' . $th->getLine());
+            return response()->json([
+                'code' => 500,
+                'message' => 'failed',
+            ], status:500);
         }
     }
 }

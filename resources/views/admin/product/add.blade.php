@@ -2,7 +2,7 @@
 {{-- Tìm layout->admin de extend  --}}
 
 @section('title')
-    <title>Thêm sản phẩm mới</title>
+    <title>Thêm món ăn mới</title>
 
 @endsection
 
@@ -28,23 +28,37 @@
                   {{-- Sinh ra token bao mat --}}
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label >Tên sản phẩm</label>
-                        <input type="text" class="form-control" placeholder="Nhập tên sản phẩm"
-                               name = "name"
+                        <label >Tên món ăn</label>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" 
+                        placeholder="Nhập tên món ăn"
+                        name = "name"
+                        value="{{ old('name')}}"
                         >
+                        <div>
+                          @error('name')
+                          <div class="alert alert-danger">{{ $message }}</div>
+                          @enderror
+                        </div>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label >Giá sản phẩm</label>
-                        <input type="text" class="form-control" placeholder="Nhập giá sản phẩm"
+                        <label >Giá món ăn</label>
+                        <input type="text" class="form-control @error('price') is-invalid @enderror" 
+                        placeholder="Nhập giá món ăn"
                                name = "price"
+                               value="{{ old('price')}}"
                         >
+                        <div>
+                          @error('price')
+                          <div class="alert alert-danger">{{ $message }}</div>
+                          @enderror
+                        </div>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label >Ảnh sản phẩm</label>
+                        <label >Ảnh món ăn</label>
                         <input type="file" class="form-control-file" 
                                name = "feature_image_path"
                         >
@@ -62,23 +76,35 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label >Chọn danh mục</label>
-                        <select class="form-control select2_init" name="category_id" >
+                        <select class="form-control select2_init " 
+                          name="category_id" >
                           <option value="">Chọn danh mục</option>
                           {!! $htmlOption !!}
                         </select>
+                        <div>
+                          @error('category_id')
+                          <div class="alert alert-danger">{{ $message }}</div>
+                          @enderror
+                        </div>
                     </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label >Nhập tags cho sản phẩm</label>
+                        <label >Nhập tags cho món ăn</label>
                         <select name="tags[]" class="form-control tag_select_choose" multiple="multiple">
                         </select>
                     </div>
                     </div>
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label >Mô tả sản phẩm</label>
-                          <textarea class="form-control my-editor " name="content" rows="8" ></textarea>
+                          <label >Mô tả món ăn</label>
+                          <textarea class="form-control my-editor @error('content') is-invalid @enderror " 
+                          name="content" rows="8" >{{ old('content')}}</textarea>
+                          <div>
+                            @error('content')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                          </div>
                         </div>
                       </div>
                     <div class="col-md-12">
