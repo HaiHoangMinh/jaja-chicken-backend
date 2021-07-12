@@ -30,11 +30,11 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">khách hàng</th>
+                <th scope="col">Khách hàng</th>
                 <th scope="col">Địa chỉ</th>
                 <th scope="col">Ngày đặt</th>
-                <th scope="col">Tổng thanh toán</th>
-                <th scope="col">Hình thức thanh toán</th>
+                <th scope="col">Tổng tiền</th>
+                <th scope="col">Thanh toán</th>
                 <th scope="col">Ghi chú</th>
                 <th scope="col">Thao tác</th>
               </tr>
@@ -44,11 +44,34 @@
                 @foreach ($bills as $bill)
                 <tr>
                   <th scope="row">{{$bill->id}}</th>
+                  <?php
+                  if($bill->customer_id != null)
+                  {
+                  ?>
                   <td>{{$customers->find($bill->customer_id)->name}} </td>
                   <td>{{$customers->find($bill->customer_id)->address}} </td>
+                  <?php
+                  } else {
+                  ?>
+                  <td>{{$shippings[$bill->shipping_id]->shipping_name}} </td>
+                  <td>{{$shippings[$bill->shipping_id]->shipping_name}} </td>
+                  <?php
+                  }
+                  ?>
                   <th>{{$bill->date_order}}</th>
                   <th>{{number_format($bill->total)}}</th>
-                  <th>{{$bill->payment}}</th>
+                  <?php
+                  if($payments[$bill->payment_id]->payment_method == 1)
+                  {
+                  ?>
+                  <td>Tiền mặt</td>
+                  <?php
+                  } else {
+                  ?>
+                  <td>Thẻ ATM</td>
+                  <?php
+                  }
+                  ?>
                   <th>{{$bill->note}}</th>
                    
                   <td>

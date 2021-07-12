@@ -2,7 +2,7 @@
 {{-- Tìm layout->admin de extend  --}}
 
 @section('title')
-    <title>Trang chủ</title>
+    <title>Trang chủ JajaAdmin</title>
 
 @endsection
 

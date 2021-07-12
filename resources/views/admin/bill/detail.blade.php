@@ -39,7 +39,7 @@
                 @foreach ($billDetails as $billDetail)
                 <tr>
                   <th scope="row">{{$billDetail->id}}</th>
-                  <td>{{$bills->find($billDetail->order_id)->id}} </td>
+                  <td>{{$bills->find($billDetail->bill_id)->id}} </td>
                   <td>{{$products->find($billDetail->product_id)->name}} </td>
                   <td>{{number_format($products->find($billDetail->product_id)->price)}} </td>
                   <th>{{$billDetail->quantity}}</th>

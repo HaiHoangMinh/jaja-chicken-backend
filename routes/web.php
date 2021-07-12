@@ -6,6 +6,7 @@ Route::get('/admin','AdminController@loginAdmin');
 Route::get('/logout','AdminController@logout');
 Route::post('/admin','AdminController@postLoginAdmin');
 
+
 // Load trang view home
 Route::get('/', function () {
     

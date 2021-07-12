@@ -33,14 +33,14 @@ class AdminProductController extends Controller
     }
     public function index() // Hien thi san pham
     {
-        $products = $this->product->paginate(5); // Phan trang paginate hien thi (su dung latest() de hien thi theo time insert)
+        $products = $this->product->latest()->paginate(10); // Phan trang paginate hien thi (su dung latest() de hien thi theo time insert)
         //dd(response()->json($this->product->all(),200));
         return view('admin.product.index', compact('products')); // compact: truyen data sang view
     }
-    public function getCategory($parentId){
+    public function getCategory(){
         $data = $this->category->all();
-        $recusive = new Recusive($data);
-        $htmlOption = $recusive->categoryRecusive($parentId);
+        $recusive = new Recusive();
+        $htmlOption = $recusive->categoryRecusive();
         return $htmlOption;
     }
     public function create()
@@ -59,7 +59,8 @@ class AdminProductController extends Controller
                 'price' => $request->price,
                 'content' => $request->content,
                 'user_id' => auth()->id(),
-                'category_id' => $request->category_id
+                'category_id' => $request->category_id,
+                'view_count' => 0
     
             ];
             $dataUploadFeatureImage = $this->storageTraitUpload($request,'feature_image_path','product');
@@ -105,6 +106,7 @@ class AdminProductController extends Controller
     }
     public function update(Request $request, $id){
         try {
+            
             DB::beginTransaction();
             $dataProductUpdate = [
                 'name' => $request->name,

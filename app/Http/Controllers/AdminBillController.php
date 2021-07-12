@@ -8,6 +8,7 @@ use App\Customer;
 use App\BillDetail;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class AdminBillController extends Controller
@@ -29,7 +30,10 @@ class AdminBillController extends Controller
         $bills = $this->bill->paginate(5);
         
         $customers = $this->customer->all();
-        return view('admin.bill.index',compact('bills','customers'));
+        $shippings = DB::table('shippings')->get();
+        $payments = DB::table('payments')->get();
+        
+        return view('admin.bill.index',compact('bills','customers','shippings','payments'));
 
     }
     public function create()
@@ -40,7 +44,7 @@ class AdminBillController extends Controller
     public function detail($id)
     {
         $bills = $this->bill->all();
-        $billDetails = $this->bill_detail->where('order_id',$id)->get();
+        $billDetails = $this->bill_detail->where('bill_id',$id)->get();
         $products = $this->product->all();
         return view('admin.bill.detail',compact('billDetails','products','bills'));
     }

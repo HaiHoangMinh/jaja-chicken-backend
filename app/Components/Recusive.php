@@ -1,31 +1,32 @@
 <?php
     namespace App\Components;
 
-    class Recusive {
+use App\Category;
+
+class Recusive {
         private $data;
         private $htmlSlelect = '';
         
-        public function __construct($data)
+        public function __construct()
         {
-            $this->data  = $data;
+            $this->html = '';
         }
 
 
-        public function categoryRecusive($parentId,$id = 0,$text = '')
+        public function categoryRecusive($parentId = 0, $subMark = '')
         {
-            foreach($this->data as $value){
-                if ($value['parent_id'] == $id) {
-                    if (!empty($parentId) && $parentId == $value['id']) {
-                        $this->htmlSlelect .=  "<option selected value= '". $value['id']. "'>".$text.$value['name']."</option>";
-                        
-                    }
-                    else {
-                        $this->htmlSlelect .=  "<option value= '". $value['id']. "'>".$text.$value['name']."</option>";
-                    }
-                    $this->categoryRecusive($value['id'], $text.'--');
-                    }
-                }
-            return $this->htmlSlelect;
+            $data = Category::where('parent_id',$parentId)->get();
+            foreach ($data as $dataItem ) {
+              if($dataItem->parent_id !=0)
+              {
+                $this->html .= '<option value = "' . $dataItem->id. '">'. $subMark . $dataItem->name. '</option>';
+              } else {
+                $this->html .= '<option value = "' . $dataItem->id. '">'. $dataItem->name. '</option>';
+              }
+              $this->categoryRecusive($dataItem->id,$subMark = "- ");
+            }
+            
+            return $this->html;
         }
     }
 ?>

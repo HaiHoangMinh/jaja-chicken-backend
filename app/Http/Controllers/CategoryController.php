@@ -40,10 +40,10 @@ class CategoryController extends Controller
         ]);
         return redirect() ->route('categories.index');
     }
-    public function getCategory($parentId){
+    public function getCategory(){
         $data = $this->category->all();
-        $recusive = new Recusive($data);
-        $htmlOption = $recusive->categoryRecusive($parentId);
+        $recusive = new Recusive();
+        $htmlOption = $recusive->categoryRecusive();
         return $htmlOption;
     }
 
