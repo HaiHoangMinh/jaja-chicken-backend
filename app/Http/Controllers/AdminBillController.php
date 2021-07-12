@@ -27,7 +27,7 @@ class AdminBillController extends Controller
 
     public function index()
     {
-        $bills = $this->bill->paginate(5);
+        $bills = $this->bill->latest()->paginate(5);
         
         $customers = $this->customer->all();
         $shippings = DB::table('shippings')->get();
@@ -44,9 +44,10 @@ class AdminBillController extends Controller
     public function detail($id)
     {
         $bills = $this->bill->all();
+        $bill = $this->bill->find($id);
         $billDetails = $this->bill_detail->where('bill_id',$id)->get();
         $products = $this->product->all();
-        return view('admin.bill.detail',compact('billDetails','products','bills'));
+        return view('admin.bill.detail',compact('billDetails','products','bills','bill'));
     }
     public function delete($id){
         try {

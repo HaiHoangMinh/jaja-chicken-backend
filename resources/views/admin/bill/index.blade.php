@@ -23,16 +23,15 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <a href="{{route('bills.export')}}" class="btn btn-success float-right m-3">Xuất hóa đơn</a>
+            <a href="{{route('bills.export')}}" class="btn btn-success float-right m-3">Thống kê hóa đơn</a>
           </div>
         <div class="col-md-12">
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">#</th>
+                <th scope="col">Số HĐ</th>
                 <th scope="col">Khách hàng</th>
                 <th scope="col">Địa chỉ</th>
-                <th scope="col">Ngày đặt</th>
                 <th scope="col">Tổng tiền</th>
                 <th scope="col">Thanh toán</th>
                 <th scope="col">Ghi chú</th>
@@ -58,7 +57,6 @@
                   <?php
                   }
                   ?>
-                  <th>{{$bill->date_order}}</th>
                   <th>{{number_format($bill->total)}}</th>
                   <?php
                   if($payments[$bill->payment_id]->payment_method == 1)
