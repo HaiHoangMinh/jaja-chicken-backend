@@ -8,10 +8,7 @@ Route::post('/admin','AdminController@postLoginAdmin');
 
 
 // Load trang view home
-Route::get('/', function () {
-    
-    return view('home');
-});
+Route::get('/', 'HomeController@index');
 
 
 Route::prefix('admin')->group(function () {
@@ -250,6 +247,36 @@ Route::prefix('admin')->group(function () {
         Route::get('/delete/{id}', [
             'as' => 'bills.delete',
             'uses' => 'AdminBillController@delete'
+        ]);
+
+        
+    });
+    Route::prefix('coupons')->group(function () {
+        
+        Route::get('/', [
+            'as' => 'coupons.index',
+            'uses' => 'AdminCouponController@index'
+        ]);
+        Route::get('/create', [
+            'as' => 'coupons.create',
+            'uses' => 'AdminCouponController@create'
+        ]);
+        Route::post('/store', [
+            'as' => 'coupons.store',
+            'uses' => 'AdminCouponController@store'
+        ]);
+        Route::get('/edit/{id}', [
+            'as' => 'coupons.edit',
+            'uses' => 'AdminCouponController@edit',
+            //'middleware' => 'can:role-edit',
+        ]);
+        Route::post('/update/{id}', [
+            'as' => 'coupons.update',
+            'uses' => 'AdminCouponController@update'
+        ]);
+        Route::get('/delete/{id}', [
+            'as' => 'coupons.delete',
+            'uses' => 'AdminCouponController@delete'
         ]);
 
         

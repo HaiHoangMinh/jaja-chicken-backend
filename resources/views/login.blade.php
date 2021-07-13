@@ -62,9 +62,7 @@
                                 <br/>
                                 <div class="login-sub">
                                     <input type="submit" name="submit" class="btn btn-info btn-md" value="Đăng nhập">
-                                <div id="register-link" class="text-right">
-                                    <a href="#" class="text-info">Đăng ký ngay</a>
-                                </div>
+                               
                                 </div>
                             </div>
                             

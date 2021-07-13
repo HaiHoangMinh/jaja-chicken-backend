@@ -59,7 +59,7 @@
                   ?>
                   <th>{{number_format($bill->total)}}</th>
                   <?php
-                  if($payments[$bill->payment_id]->payment_method == 1)
+                  if($payments[$bill->payment_id-1]->payment_method == 1)
                   {
                   ?>
                   <td>Tiền mặt</td>

@@ -14,7 +14,8 @@
           <img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.18169-9/537693_122897071205480_1232924036_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=NfJvKuMpZocAX8zM-gV&_nc_ht=scontent.fhan2-4.fna&oh=eea39043bc6c67ad927e5ae74bcb9f58&oe=60E64072" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="{{route('users.index')}}" class="d-block">Hoàng Minh Hai</a>
+         
+          <a href="{{route('users.index')}}" class="d-block"></a>
         </div>
       </div>
 
@@ -42,14 +43,14 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{route('menus.index')}}" class="nav-link">
               <i class="nav-icon fa fa-map"></i>
               <p>
                 Danh sách menu
               </p>
             </a>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a href="{{route('products.index')}}" class="nav-link">
               <i class="nav-icon fa fa-shopping-basket"></i>
@@ -90,6 +91,14 @@
               </p>
             </a>
           </li>
+           <li class="nav-item">
+            <a href="{{route('coupons.index')}}" class="nav-link">
+              <i class="nav-icon fa fa-cart-arrow-down"></i>
+              <p>
+                Quản lý mã giảm giá
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="{{route('roles.index')}}" class="nav-link">
               <i class="nav-icon fa fa-address-book"></i>
@@ -98,14 +107,14 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{route('permissions.create')}}" class="nav-link">
               <i class="nav-icon fa fa-tags"></i>
               <p>
                 Thêm các quyền User
               </p>
             </a>
-          </li>
+          </li> --}}
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

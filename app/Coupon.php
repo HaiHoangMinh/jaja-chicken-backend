@@ -4,8 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Slider extends Model
+class Coupon extends Model
 {
-    //
-    protected $guarded = [];    
+    protected $guarded =[];
 }
