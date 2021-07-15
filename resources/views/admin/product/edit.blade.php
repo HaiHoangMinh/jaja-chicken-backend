@@ -54,7 +54,7 @@
                       </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                          <img src="{{$product->feature_image_path}}" alt="">
+                          <img src="{{$product->feature_image_path}}" alt="" height="200" width="200">
                       </div>        
                     </div>
                     <div class="col-md-12">
@@ -71,7 +71,7 @@
                         <br/>
                         @foreach($product->productImages as $productImageItem)
                           <div class="col-md-3">
-                              <img class="image_detail_product" src="{{$productImageItem->image_path}}" alt="">
+                              <img class="image_detail_product" src="{{$productImageItem->image_path}}" alt="" height="200" width="200">
                           </div>
                         @endforeach
                     </div>

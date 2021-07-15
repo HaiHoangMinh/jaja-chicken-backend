@@ -41,6 +41,45 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('adminlte/dist/js/adminlte.min.js')}}"></script>
 <script src="{{asset('adminlte/plugins/moment/moment.min.js')}}"></script>
 <script src="{{asset('adminlte/plugins/daterangepicker/daterangepicker.js')}}"></script>
+<script>
+    $(document).ready(function(){
+      $('.add_delivery').click(function(){
+        var city = $('.city').val();
+        var province = $('.province').val();
+        var wards = $('.wards').val();
+        var _token =$('input[name="_token"]').val();
+        var fee_ship = $('.fee_ship').val();
+        $.ajax({
+          url: '{{url('/insert-delivery')}}',
+          method: 'POST',
+          data: {wards:wards,province:province,fee_ship:fee_ship,city:city,_token:_token},
+          success:function(data){
+            alert("thêm thành công");
+          }
+        });
+        
+      })
+      $('.choose').change(function(){
+        var action = $(this).attr('id');
+        var ma_id = $(this).val();
+        var _token =$('input[name="_token"]').val();
+        var result = "";
+        if (action == 'city') {
+          result = 'province';
+        } else {
+          result = 'wards';
+        }
+        $.ajax({
+          url: '{{url('/select-delivery')}}',
+          method: 'POST',
+          data: {action:action,ma_id:ma_id,_token:_token},
+          success:function(data){
+            $('#'+result).html(data);
+          }
+        });
+      })
+    });
+</script>
 @yield('js')
 </body>
 </html>

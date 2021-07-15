@@ -9,6 +9,11 @@ Route::post('/admin','AdminController@postLoginAdmin');
 
 // Load trang view home
 Route::get('/', 'HomeController@index');
+//Delivery
+Route::get('/delivery','AdminDeliveryController@index');
+Route::get('/add-delivery','AdminDeliveryController@create');
+Route::post('/insert-delivery','AdminDeliveryController@store');
+Route::post('/select-delivery','AdminDeliveryController@select');
 
 
 Route::prefix('admin')->group(function () {
@@ -281,4 +286,32 @@ Route::prefix('admin')->group(function () {
 
         
     });
+    Route::prefix('promotions')->group(function () {
+        Route::get('/', [
+            // link cac route categories
+            'as' => 'promotions.index',
+            'uses' => 'AdminPromotionController@index',
+        ]);
+        Route::get('/create', [
+            'as' => 'promotions.create',
+            'uses' => 'AdminPromotionController@create',
+        ]);
+        Route::post('/store', [
+            'as' => 'promotions.store',
+            'uses' => 'AdminPromotionController@store'
+        ]);
+        Route::get('/edit/{id}', [
+            'as' => 'promotions.edit',
+            'uses' => 'AdminPromotionController@edit',
+        ]);
+        Route::post('/update/{id}', [
+            'as' => 'promotions.update',
+            'uses' => 'AdminPromotionController@update'
+        ]);
+        Route::get('/delete/{id}', [
+            'as' => 'promotions.delete',
+            'uses' => 'AdminPromotionController@delete',
+        ]);
+    });
+    
 });

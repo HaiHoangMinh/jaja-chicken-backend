@@ -52,8 +52,8 @@
                   <?php
                   } else {
                   ?>
-                  <td>{{$shippings[$bill->shipping_id]->shipping_name}} </td>
-                  <td>{{$shippings[$bill->shipping_id]->shipping_name}} </td>
+                  <td>{{$shippings[$bill->shipping_id-1]->shipping_name}} </td>
+                  <td>{{$shippings[$bill->shipping_id-1]->shipping_name}} </td>
                   <?php
                   }
                   ?>

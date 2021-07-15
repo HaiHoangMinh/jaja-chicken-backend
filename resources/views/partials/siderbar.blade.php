@@ -93,9 +93,25 @@
           </li>
            <li class="nav-item">
             <a href="{{route('coupons.index')}}" class="nav-link">
-              <i class="nav-icon fa fa-cart-arrow-down"></i>
+              <i class="nav-icon fa fa-gift"></i>
               <p>
                 Quản lý mã giảm giá
+              </p>
+            </a>
+          </li>
+          {{-- <li class="nav-item">
+            <a href="{{URL::to('/delivery')}}" class="nav-link">
+              <i class="nav-icon fa fa-motorcycle"></i>
+              <p>
+                Tính phí vận chuyển
+              </p>
+            </a>
+          </li> --}}
+          <li class="nav-item">
+            <a href="{{route('promotions.index')}}" class="nav-link">
+              <i class="nav-icon fa fa-percent"></i>
+              <p>
+                Quản lý khuyến mãi
               </p>
             </a>
           </li>
