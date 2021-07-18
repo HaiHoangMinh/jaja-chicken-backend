@@ -44,13 +44,13 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                      <label >Email</label>
+                      <label >Username</label>
                       <input type="text" class="form-control @error('name') is-invalid @enderror" 
-                            placeholder="Nhập email"
-                             name = "email"
-                             value="{{old('email')}}"
+                            placeholder="Nhập username"
+                             name = "username"
+                             value="{{old('username')}}"
                       >
-                    @error('email')
+                    @error('username')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">

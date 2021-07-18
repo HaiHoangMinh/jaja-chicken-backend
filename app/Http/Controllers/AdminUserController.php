@@ -38,8 +38,8 @@ class AdminUserController extends Controller
             DB::beginTransaction();
             $user =$this->user->create([
                 'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password)
+                'username' => $request->username,
+                'password' => md5($request->password)
             ]);
             $user->roles()->attach($request->role_id);
             DB::commit();
@@ -65,8 +65,8 @@ class AdminUserController extends Controller
             DB::beginTransaction();
             $user =$this->user->find($id)->update([
                 'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
+                'username' => $request->username,
+                'password' => md5($request->password)
             ]);
             $user = $this->user->find($id);
             $user->roles()->sync($request->role_id);

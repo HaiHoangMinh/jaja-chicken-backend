@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AdminUserController;
 
 Route::get('/admin','AdminController@loginAdmin');
 Route::get('/logout','AdminController@logout');
@@ -14,6 +13,12 @@ Route::get('/delivery','AdminDeliveryController@index');
 Route::get('/add-delivery','AdminDeliveryController@create');
 Route::post('/insert-delivery','AdminDeliveryController@store');
 Route::post('/select-delivery','AdminDeliveryController@select');
+
+
+// Feedback
+Route::post('/allow-feedback','AdminFeedbackController@allow_feedback');
+Route::post('/reply-feedback','AdminFeedbackController@reply_feedback');
+
 
 
 Route::prefix('admin')->group(function () {
@@ -313,5 +318,27 @@ Route::prefix('admin')->group(function () {
             'uses' => 'AdminPromotionController@delete',
         ]);
     });
-    
+    Route::prefix('feedbacks')->group(function () {
+        
+        Route::get('/', [
+            'as' => 'feedbacks.index',
+            'uses' => 'AdminFeedbackController@index'
+        ]);
+       
+        Route::get('/edit/{id}', [
+            'as' => 'feedbacks.edit',
+            'uses' => 'AdminFeedbackController@edit',
+            //'middleware' => 'can:role-edit',
+        ]);
+        Route::post('/update/{id}', [
+            'as' => 'feedbacks.update',
+            'uses' => 'AdminFeedbackController@update'
+        ]);
+        Route::get('/delete/{id}', [
+            'as' => 'feedbacks.delete',
+            'uses' => 'AdminFeedbackController@delete'
+        ]);
+
+        
+    });
 });

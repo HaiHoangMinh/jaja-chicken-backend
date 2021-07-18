@@ -31,7 +31,7 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Họ và tên</th>
-                <th scope="col">Email</th>
+                <th scope="col">Username</th>
                 <th scope="col">Thao tác</th>
               </tr>
             </thead>
@@ -41,7 +41,7 @@
                 <tr>
                   <th scope="row">{{$user->id}}</th>
                   <td>{{$user->name}} </td>
-                  <th>{{$user->email}}</th>
+                  <th>{{$user->username}}</th>
                    
                   <td>
                     <a href="{{ route('users.edit', ['id'=> $user->id]) }}" class="btn btn-default ">Edit</a>

@@ -2,7 +2,7 @@
 {{-- Tìm layout->admin de extend  --}}
 
 @section('title')
-    <title>Sửa thông tin user</title>
+    <title>Thông tin user</title>
 @endsection
 
 @section('css')
@@ -44,13 +44,13 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                      <label >Email</label>
+                      <label >Username</label>
                       <input type="text" class="form-control @error('name') is-invalid @enderror" 
-                            placeholder="Nhập email"
-                             name = "email"
-                             value="{{$user->email}}"
+                            placeholder="Nhập username"
+                             name = "username"
+                             value="{{$user->username}}"
                       >
-                    @error('email')
+                    @error('username')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">

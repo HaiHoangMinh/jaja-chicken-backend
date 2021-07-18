@@ -31,7 +31,7 @@
               <tr>
                 <th scope="col">Số HĐ</th>
                 <th scope="col">Khách hàng</th>
-                <th scope="col">Địa chỉ</th>
+                <th scope="col">Địa chỉ giao hàng</th>
                 <th scope="col">Tổng tiền</th>
                 <th scope="col">Thanh toán</th>
                 <th scope="col">Ghi chú</th>

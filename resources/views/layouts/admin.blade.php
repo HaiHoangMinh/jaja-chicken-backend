@@ -15,7 +15,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('adminlte/plugins/daterangepicker/daterangepicker.css')}}">
   <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css')}}">
-  <link rel="shortcut icon" href="https://scontent.fpnh22-3.fna.fbcdn.net/v/t1.6435-9/161717683_210969530832330_5178469175515308511_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=cMOcqUWoHtwAX-zuxhR&_nc_ht=scontent.fpnh22-3.fna&oh=b5d0f8422e63b9d7bb0edc7139720dbd&oe=60E70F7C" />
+  <link rel="shortcut icon" href="{{asset('images/logo-removebg-preview.png')}}" />
   @yield('css')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -42,6 +42,48 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('adminlte/plugins/moment/moment.min.js')}}"></script>
 <script src="{{asset('adminlte/plugins/daterangepicker/daterangepicker.js')}}"></script>
 <script>
+      $('.feedback_duyet').click(function(){
+        var feedback_status = $(this).data('feedback_status');
+        var feedback_id = $(this).data('feedback_id');
+        var feedback_product_id = $(this).attr('id');
+        var _token =$('input[name="_token"]').val();
+        $.ajax({
+            url: '{{url('/allow-feedback')}}',
+            method: 'POST',
+            data: {feedback_status:feedback_status,feedback_id:feedback_id,
+              feedback_product_id:feedback_product_id,_token:_token},
+            success:function(data){
+              if (feedback_status == 0) {
+                 alert("Đã hủy bỏ");
+                 location.reload();
+              } else {
+                alert("Đã duyệt");
+                location.reload();
+              }
+              
+            }
+          });
+      });
+</script>
+<script>
+    $('.btn-reply-feedback').click(function(){
+        var feedback_id = $(this).data('feedback_id');
+        var replay_feedback = $('.replay_feedback').val();
+        var _token = $('input[name="_token"]').val();
+        $.ajax({
+            url: '{{url('/reply-feedback')}}',
+            method: 'POST',
+            data: {replay_feedback:replay_feedback,feedback_id:feedback_id,_token:_token
+            },
+            success:function(data){
+              $('.replay_feedback').val(null);
+              location.reload();
+            }
+          });
+      });
+</script>
+  {{-- Tinh phi van chuyen  --}}
+<script>
     $(document).ready(function(){
       $('.add_delivery').click(function(){
         var city = $('.city').val();
@@ -49,14 +91,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
         var wards = $('.wards').val();
         var _token =$('input[name="_token"]').val();
         var fee_ship = $('.fee_ship').val();
-        $.ajax({
-          url: '{{url('/insert-delivery')}}',
-          method: 'POST',
-          data: {wards:wards,province:province,fee_ship:fee_ship,city:city,_token:_token},
-          success:function(data){
-            alert("thêm thành công");
-          }
-        });
+          $.ajax({
+            url: '{{url('/insert-delivery')}}',
+            method: 'POST',
+            data: {wards:wards,province:province,fee_ship:fee_ship,city:city,_token:_token},
+            success:function(data){
+              alert("thêm thành công");
+            }
+          });
         
       })
       $('.choose').change(function(){

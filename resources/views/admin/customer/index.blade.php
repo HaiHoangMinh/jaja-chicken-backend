@@ -30,7 +30,6 @@
                 <th scope="col">#</th>
                 <th scope="col">Họ và tên</th>
                 <th scope="col">Email</th>
-                <th scope="col">Giới tính</th>
                 <th scope="col">SĐT</th>
                 <th scope="col">Địa chỉ</th>
                 <th scope="col">Thao tác</th>
@@ -43,7 +42,6 @@
                   <th scope="row">{{$customer->id}}</th>
                   <td>{{$customer->name}} </td>
                   <th>{{$customer->email}}</th>
-                  <th>{{$customer->gender}}</th>
                   <th>{{$customer->phone_number}}</th>
                   <th>{{$customer->address}}</th>
                    
