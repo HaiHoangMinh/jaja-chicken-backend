@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bill;
 use App\BillDetail as AppBillDetail;
+use PDF;
 use App\Customer;
 use App\BillDetail;
 use App\Product;
@@ -27,25 +28,35 @@ class AdminBillController extends Controller
 
     public function index()
     {
-        $bills = $this->bill->latest()->paginate(5);
+        $bills = $this->bill->latest()->paginate(10);
         $customers = $this->customer->all();
         $shippings = DB::table('shippings')->get();
         $payments = DB::table('payments')->get();
         return view('admin.bill.index',compact('bills','customers','shippings','payments'));
 
     }
-    public function create()
-    {
-       dd("bill created");
-
-    }
     public function detail($id)
     {
         $bills = $this->bill->all();
         $bill = $this->bill->find($id);
+        $customers = $this->customer->all();
+        $shippings = DB::table('shippings')->get();
         $billDetails = $this->bill_detail->where('bill_id',$id)->get();
         $products = $this->product->all();
-        return view('admin.bill.detail',compact('billDetails','products','bills','bill'));
+        return view('admin.bill.detail',compact('billDetails','products','bills','bill','customers','shippings'));
+    }
+    public function update($id){
+        $bill = $this->bill->find($id);
+        if ($bill->status == 1) {
+            DB::table('bills')
+                ->where('id', $id)
+                ->update(['status' => 2]);
+        } else {
+            DB::table('bills')
+                ->where('id', $id)
+                ->update(['status' => 3]);
+        }
+        return redirect()->route('bills.index');
     }
     public function delete($id){
         try {
@@ -62,5 +73,13 @@ class AdminBillController extends Controller
                 'message' => 'failed',
             ], status:500);
         }
+    }
+    
+    public function cancel($id)
+    {
+        DB::table('bills')
+                ->where('id', $id)
+                ->update(['status' => 0]);
+    return redirect()->route('bills.index');
     }
 }

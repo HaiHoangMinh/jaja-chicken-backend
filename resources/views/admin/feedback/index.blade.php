@@ -61,8 +61,7 @@
                   <td>{{$feedback->content}}
 
                   @if($feedback->status == 1)
-                  
-                    <br/><textarea class="replay_feedback" rows="5" ></textarea>
+                    <br/><textarea class="replay_feedback_{{$feedback->id}}" rows="5" ></textarea>
                     <br/><button class="btn btn-default btn-reply-feedback" 
                     data-feedback_id="{{$feedback->id}}"
                     >Trả lời</button>

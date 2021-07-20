@@ -64,6 +64,19 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label >Ảnh đại diện</label>
+                        <input type="file" class="form-control-file" 
+                               name = "feature_image_path"
+                        >
+                    </div>
+                    </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <img src="{{$user->feature_image_path}}" alt="" height="100" width="100">
+                    </div>        
+                  </div>
                     <div class="form-group">
                       <label >Sửa vai trò</label>
                       <select class="form-control select2_init " name="role_id[]" multiple >

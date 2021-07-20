@@ -44,7 +44,7 @@ class AdminFeedbackController extends Controller
     public function delete($id){
         
        DB::table('feedbacks')->where('id',$id)->delete();
-        return redirect()->route('feedbacks.index');
+      return redirect()->route('feedbacks.index');
     }
     
 }

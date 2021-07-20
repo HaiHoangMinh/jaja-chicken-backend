@@ -34,7 +34,7 @@
                 <th scope="col">Địa chỉ giao hàng</th>
                 <th scope="col">Tổng tiền</th>
                 <th scope="col">Thanh toán</th>
-                <th scope="col">Ghi chú</th>
+                <th scope="col">Tình trạng</th>
                 <th scope="col">Thao tác</th>
               </tr>
             </thead>
@@ -53,7 +53,7 @@
                   } else {
                   ?>
                   <td>{{$shippings[$bill->shipping_id-1]->shipping_name}} </td>
-                  <td>{{$shippings[$bill->shipping_id-1]->shipping_name}} </td>
+                  <td>{{$shippings[$bill->shipping_id-1]->shipping_address}} </td>
                   <?php
                   }
                   ?>
@@ -70,13 +70,32 @@
                   <?php
                   }
                   ?>
-                  <th>{{$bill->note}}</th>
-                   
+                  
+                  @if($bill->status == 1)
+                  <td>Đang làm
+                    <br/><a href="{{ route('bills.update', ['id'=> $bill->id]) }}">
+                      Cập nhật</a>
+                  </td>
+                  @elseif($bill->status == 2)
+                  <td>Đang giao
+                    <br/><a href="{{ route('bills.update', ['id'=> $bill->id]) }}">
+                      Cập nhật</a>
+                  </td>
+                  @elseif($bill->status == 3)
+                  <td>Đã giao</td>
+                  @else 
+                  <td>Đã bị hủy</td>
+                  @endif
+                  
                   <td>
                     <a href="{{ route('bills.detail', ['id'=> $bill->id]) }}" class="btn btn-default ">Chi tiết</a>
-                    
+                    @if ($bill->status == 1)
+                        <a href="{{ route('bills.cancel', ['id'=> $bill->id]) }}" class="btn btn-danger ">
+                        Hủy</a>
+                    @endif
                     <a data-url="{{ route('bills.delete', ['id'=> $bill->id]) }}"
-                    href="" class="btn btn-danger action_delete ">Delete</a>
+                    href="" class="btn btn-danger action_delete ">Xóa</a>
+                    
                   </td>
                   </tr>
               

@@ -16,36 +16,58 @@
 @endsection
 
 @section('content')
+
   <div class="content-wrapper">
-    <br/>
-    <div class="col-md-12">
-      <a href="{{route('bills.export')}}" class="btn btn-success float-right m-3">Xuất hóa đơn</a>
-    </div>
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          
+          <div class="col-md-12">
+            <a href="{{URL::to('/print-bill/'.$bill->id)}}" class="btn btn-success float-right m-3">Xuất hóa đơn</a>
+          </div>
+        </div>
           <div class="col-md-12">
             <table class="table">
               <thead>
-                <h4>Thông tin hóa đơn</h4>
+                <center><h4>THÔNG TIN ĐƠN HÀNG</h4></center>
                 <tr>
                   <th scope="col">Hóa đơn số</th>
+                  <th scope="col">Khách hàng</th>
+                  <th scope="col">Số điện thoại</th>
                   <th scope="col">Ngày đặt</th>
-                  <th scope="col">Đơn giá</th>
-                  <th scope="col">Trạng thái</th>
+                  <th scope="col">Ghi chú</th>
+                  <th scope="col">Tình trạng đơn hàng</th>
                 </tr>
               </thead>
               <tbody>
                    
 
                   <tr>
-                    <th scope="row">{{$bill->id}}</th>
+                    <td scope="row">{{$bill->id}}</td>
+                    <?php
+                  if($bill->customer_id != null)
+                  {
+                  ?>
+                  <td>{{$customers->find($bill->customer_id)->name}} </td>
+                  <td>{{$customers->find($bill->customer_id)->phone_number}} </td>
+                  <?php
+                  } else {
+                  ?>
+                  <td>{{$shippings[$bill->shipping_id-1]->shipping_name}} </td>
+                  <td>{{$shippings[$bill->shipping_id-1]->shipping_phone}} </td>
+                  <?php
+                  }
+                  ?>
                     <td>{{$bill->date_order}} </td>
-                    <td>{{number_format($bill->total)}} </td>
-                    <th>{{$bill->status}}</th>
-        
-                     
+                    <th>{{$bill->note}}</th>
+                    @if($bill->status == 1)
+                    <td>Đang chuẩn bị đơn hàng</td>
+                    @elseif($bill->status == 2)
+                    <td>Đang giao</td>
+                    @elseif($bill->status == 3)
+                    <td>Đã giao</td>
+                    @else 
+                    <td>Đã bị hủy</td>
+                    @endif
                     <td>
                       
                     </td>
@@ -65,10 +87,10 @@
           <div class="col-md-12">
             <table class="table">
               <thead>
-                <h4>Danh sách món ăn</h4>
+                <center><h4>DANH SÁCH MÓN ĂN ĐÃ ĐẶT</h4></center>
                 <tr>
                   <th scope="col">Món ăn</th>
-                  <th scope="col">Đơn giá</th>
+                  <th scope="col">Giá món ăn</th>
                   <th scope="col">Số lượng</th>
                   <th scope="col">Thành tiền</th>
                 </tr>
@@ -81,25 +103,24 @@
                     <td>{{number_format($products->find($billDetail->product_id)->price)}} </td>
                     <th>{{$billDetail->quantity}}</th>
                     <td>{{number_format($products->find($billDetail->product_id)->price * $billDetail->quantity)}} </td>
-                     
                     <td>
-                      
                     </td>
                     </tr>
                 
               </td>
               </tr>
             @endforeach
-  
+             
   
               </tbody>
+              
             </table>
-          
+            <span>Tổng thanh toán:</span>
+            <span>{{number_format($bill->total)}} VNĐ</span> 
           
           
           </div>
-    
-          </div>
+
         </div>
     </div>
   </div>

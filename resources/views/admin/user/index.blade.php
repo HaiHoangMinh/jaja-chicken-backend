@@ -32,6 +32,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Họ và tên</th>
                 <th scope="col">Username</th>
+                <th scope="col">Hình ảnh</th>
                 <th scope="col">Thao tác</th>
               </tr>
             </thead>
@@ -42,6 +43,7 @@
                   <th scope="row">{{$user->id}}</th>
                   <td>{{$user->name}} </td>
                   <th>{{$user->username}}</th>
+                  <td><img src="{{$user->feature_image_path}}" alt="" class="" height="100" width="100"></td>
                    
                   <td>
                     <a href="{{ route('users.edit', ['id'=> $user->id]) }}" class="btn btn-default ">Edit</a>

@@ -55,13 +55,13 @@
                     <div class="form-group">
                       <label >Ngày bắt đầu</label>
                       <input type="text" class="form-control" placeholder="Ngày bắt đầu"
-                             name = "date_start"
+                             name = "date_start" id="datepicker"
                       >
                   </div>
                   <div class="form-group">
                     <label >Ngày kết thúc</label>
                     <input type="text" class="form-control" placeholder="Ngày kết thúc"
-                           name = "date_end"
+                           name = "date_end" id="datepicker2"
                     >
                 </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

@@ -16,7 +16,7 @@ class AdminController extends Controller
     public function AuthLogin()
     {
         $admin_id = Session::get('admin_id');
-        if($admin_id)
+        if($admin_id != null)
         {
             Redirect::to('/');
         } else {
@@ -25,7 +25,6 @@ class AdminController extends Controller
     }
     public function loginAdmin()
     {
-        
         if (Auth::check()) {
             return redirect()->to('/');
         }
@@ -41,6 +40,7 @@ class AdminController extends Controller
         if ($result) {
             Session::put('admin_name',$result->name);
             Session::put('admin_id',$result->id);
+            Session::put('admin_img',$result->feature_image_path);
             if ($remember !=null) {
                 Session::put('admin_username',$request->username);
                 Session::put('admin_password',$request->password);
@@ -65,6 +65,7 @@ class AdminController extends Controller
         $this->AuthLogin();
         Session::put('admin_name',null);
         Session::put('admin_id',null);
+        Session::put('admin_img',null);
         Auth::logout();
         return Redirect::to('/admin');
     }

@@ -1,7 +1,7 @@
  <!-- Main Sidebar Container -->
  <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo adminlte/dist/img/AdminLTELogo.png-->
-    <a href="/" class="brand-link">
+    <a href="{{route('home')}}" class="brand-link">
       <img src="{{asset('images/logo-removebg-preview.png')}}" alt="AdminJAJA Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Admin JAJA</span>
     </a>
@@ -11,11 +11,11 @@
       <?php
       $admin_name = Session::get('admin_name');
       $admin_id = Session::get('admin_id');
-                                 
+      $admin_img =  Session::get('admin_img');                 
       ?>
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="#" class="img-circle elevation-2" alt="User Image">
+          <img src="{{$admin_img}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
          

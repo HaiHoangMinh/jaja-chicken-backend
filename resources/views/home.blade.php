@@ -13,7 +13,6 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
           <div class="col-lg-3 col-6">
@@ -77,110 +76,47 @@
           </div>
           <!-- ./col -->
         </div>
+
+          <div class="col-md-12">
+            <div class="card">
+              <br>
+                  <center><h3 class="title_thongke">THÔNG TIN CHI TIẾT</h3></center>
+                  
+              <form autocomplete="off">
+                @csrf
+                <div class="row">
+                  <div class="col-md-3">
+                    <p>Từ ngày: <input type="text" id="datepicker" class="form-control"></p>
+                  </div>
+                  <div class="col-md-3">
+                    <p>Đến ngày: <input type="text" id="datepicker2" class="form-control"></p>
+                  </div>
+                  <div class="col-md-2">
+                    <p>
+                      Lọc theo
+                      <select class="dashboard-filter form-control">
+                        <option >--Chọn--</option>
+                        <option value="7ngay">7 ngày qua</option>
+                        <option value="thangtruoc">Tháng trước</option>
+                        <option value="thangnay">Tháng này</option>
+                        <option value="365ngayqua">Năm vừa rồi</option>
+                        
+                      </select>
+                    </p>
+                  </div>
+                  <div class="col-md-2">
+                    <input type="button" class="btn btn-default " id="btn-filter" value="Lọc">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+
+            
+          </div>
+       
         <!-- /.row -->
-        <!-- Main row -->
-        <div class="card direct-chat direct-chat-primary">
-          <div class="card-header">
-            <h3 class="card-title">Phản hồi từ khách hàng</h3>
-
-            <div class="card-tools">
-              
-              <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-              
-              <button type="button" class="btn btn-tool" data-card-widget="remove">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body">
-            <!-- Conversations are loaded here -->
-            <div class="direct-chat-messages">
-              <!-- Message. Default to the left -->
-              <div class="direct-chat-msg">
-                <div class="direct-chat-infos clearfix">
-                  <span class="direct-chat-name float-left">Customer 1</span>
-                  <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
-                </div>
- 
-                <div class="direct-chat-text">
-                  tin nhắn 1
-                </div>
-                <!-- /.direct-chat-text -->
-              </div>
-              <!-- /.direct-chat-msg -->
-
-              
-
-              <!-- Message. Default to the left -->
-              <div class="direct-chat-msg">
-                <div class="direct-chat-infos clearfix">
-                  <span class="direct-chat-name float-left">Customer 2</span>
-                  <span class="direct-chat-timestamp float-right">time</span>
-                </div>
-                
-                <div class="direct-chat-text">
-                  Tin nhắn 2
-                </div>
-                <!-- /.direct-chat-text -->
-              </div>
-              <!-- /.direct-chat-msg -->
-              <div class="direct-chat-msg">
-                <div class="direct-chat-infos clearfix">
-                  <span class="direct-chat-name float-left">Customer 1</span>
-                  <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
-                </div>
- 
-                <div class="direct-chat-text">
-                  tin nhắn 1
-                </div>
-                <!-- /.direct-chat-text -->
-              </div>
-              <!-- /.direct-chat-msg -->
-
-              
-
-              <!-- Message. Default to the left -->
-              <div class="direct-chat-msg">
-                <div class="direct-chat-infos clearfix">
-                  <span class="direct-chat-name float-left">Customer 2</span>
-                  <span class="direct-chat-timestamp float-right">time</span>
-                </div>
-                
-                <div class="direct-chat-text">
-                  Tin nhắn 2
-                </div>
-                <!-- /.direct-chat-text -->
-              </div>
-              <!-- /.direct-chat-msg -->
-             
-
-            </div>
-            <!--/.direct-chat-messages-->
-
-           
-              </ul>
-              <!-- /.contacts-list -->
-            </div>
-            <!-- /.direct-chat-pane -->
-          </div>
-          <!-- /.card-body -->
-          <div class="card-footer">
-            <form action="#" method="post">
-              <div class="input-group">
-                <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                <span class="input-group-append">
-                  <button type="button" class="btn btn-primary">Send</button>
-                </span>
-              </div>
-            </form>
-          </div>
-          <!-- /.card-footer-->
-        </div>
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
+        
     </section>
     <!-- /.content -->
   </div>

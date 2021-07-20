@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminBillController;
 
 Route::get('/admin','AdminController@loginAdmin');
 Route::get('/logout','AdminController@logout');
@@ -7,13 +8,13 @@ Route::post('/admin','AdminController@postLoginAdmin');
 
 
 // Load trang view home
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 //Delivery
 Route::get('/delivery','AdminDeliveryController@index');
 Route::get('/add-delivery','AdminDeliveryController@create');
 Route::post('/insert-delivery','AdminDeliveryController@store');
 Route::post('/select-delivery','AdminDeliveryController@select');
-
+Route::get('/print-bill','AdminBillController@print_bill');
 
 // Feedback
 Route::post('/allow-feedback','AdminFeedbackController@allow_feedback');
@@ -254,9 +255,17 @@ Route::prefix('admin')->group(function () {
             'as' => 'bills.detail',
             'uses' => 'AdminBillController@detail'
         ]);
+        Route::get('/update/{id}', [
+            'as' => 'bills.update',
+            'uses' => 'AdminBillController@update'
+        ]);
         Route::get('/delete/{id}', [
             'as' => 'bills.delete',
             'uses' => 'AdminBillController@delete'
+        ]);
+        Route::get('/cancel/{id}', [
+            'as' => 'bills.cancel',
+            'uses' => 'AdminBillController@cancel'
         ]);
 
         

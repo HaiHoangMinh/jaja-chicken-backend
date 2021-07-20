@@ -13,6 +13,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{asset('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="{{asset('adminlte/plugins/daterangepicker/daterangepicker.css')}}">
   <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css')}}">
   <link rel="shortcut icon" href="{{asset('images/logo-removebg-preview.png')}}" />
@@ -40,7 +41,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="{{asset('adminlte/dist/js/adminlte.min.js')}}"></script>
 <script src="{{asset('adminlte/plugins/moment/moment.min.js')}}"></script>
-<script src="{{asset('adminlte/plugins/daterangepicker/daterangepicker.js')}}"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+      prevText: "Tháng trước",
+      nextText: "Tháng sau",
+      dateFormat: "yy/mm/dd",
+      // dayNamesMin: ["Thứ 2","Thứ 3","Thứ 4",
+      // "Thứ 5","Thứ 6","Thứ 7","Chủ nhật"],
+      duration: "slow"
+    });
+  });
+  $( function() {
+    $( "#datepicker2" ).datepicker({
+      prevText: "Tháng trước",
+      nextText: "Tháng sau",
+      dateFormat: "yy/mm/dd",
+      // dayNamesMin: ["Thứ 2","Thứ 3","Thứ 4",
+      // "Thứ 5","Thứ 6","Thứ 7","Chủ nhật"],
+      duration: "slow"
+    });
+  });
+  </script>
+
 <script>
       $('.feedback_duyet').click(function(){
         var feedback_status = $(this).data('feedback_status');
@@ -68,7 +92,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script>
     $('.btn-reply-feedback').click(function(){
         var feedback_id = $(this).data('feedback_id');
-        var replay_feedback = $('.replay_feedback').val();
+        var replay_feedback = $('.replay_feedback_'+feedback_id).val();
         var _token = $('input[name="_token"]').val();
         $.ajax({
             url: '{{url('/reply-feedback')}}',
@@ -77,6 +101,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             },
             success:function(data){
               $('.replay_feedback').val(null);
+              alert("Đã gửi trả lời");
               location.reload();
             }
           });
