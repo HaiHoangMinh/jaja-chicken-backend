@@ -63,6 +63,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
       duration: "slow"
     });
   });
+      $('#btn-filter').click(function(){
+        var date_start =$('#datepicker').val();
+        var date_end =$('#datepicker2').val();
+        var _token =$('input[name="_token"]').val();
+        $.ajax({
+            url: '{{url('/filter-data')}}',
+            method: 'POST',
+            data: {date_start:date_start,date_end:date_end,
+              _token:_token},
+            success:function(data){
+              $('.result').html(data);
+              
+            }
+          });
+      });
   </script>
 
 <script>

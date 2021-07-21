@@ -13,7 +13,7 @@ class AdminFeedbackController extends Controller
 
     public function index()
     {
-        $feedbacks = DB::table('feedbacks')->paginate(10);
+        $feedbacks = DB::table('feedbacks')->orderBy('id','DESC')->paginate(10);
         $customers = DB::table('customers')->get();
         $products = DB::table('products')->get();
         return view('admin.feedback.index',compact('feedbacks','products','customers'));

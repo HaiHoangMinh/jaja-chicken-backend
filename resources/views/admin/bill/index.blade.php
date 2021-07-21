@@ -48,12 +48,12 @@
                   {
                   ?>
                   <td>{{$customers->find($bill->customer_id)->name}} </td>
-                  <td>{{$customers->find($bill->customer_id)->address}} </td>
+                  <td style="font-size: 13px">{{$customers->find($bill->customer_id)->address}} </td>
                   <?php
                   } else {
                   ?>
                   <td>{{$shippings[$bill->shipping_id-1]->shipping_name}} </td>
-                  <td>{{$shippings[$bill->shipping_id-1]->shipping_address}} </td>
+                  <td style="font-size: 13px">{{$shippings[$bill->shipping_id-1]->shipping_address}} </td>
                   <?php
                   }
                   ?>

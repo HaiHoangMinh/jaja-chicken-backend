@@ -9,6 +9,10 @@ Route::post('/admin','AdminController@postLoginAdmin');
 
 // Load trang view home
 Route::get('/', 'HomeController@index')->name('home');
+Route::post('/filter-data', 'HomeController@filter_data');
+
+
+
 //Delivery
 Route::get('/delivery','AdminDeliveryController@index');
 Route::get('/add-delivery','AdminDeliveryController@create');

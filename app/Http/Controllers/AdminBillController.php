@@ -28,7 +28,7 @@ class AdminBillController extends Controller
 
     public function index()
     {
-        $bills = $this->bill->latest()->paginate(10);
+        $bills = $this->bill->orderBy('id','DESC')->paginate(10);
         $customers = $this->customer->all();
         $shippings = DB::table('shippings')->get();
         $payments = DB::table('payments')->get();
