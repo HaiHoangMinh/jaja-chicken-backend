@@ -22,9 +22,9 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12">
+          {{-- <div class="col-md-12">
             <a href="{{route('bills.export')}}" class="btn btn-success float-right m-3">Thống kê hóa đơn</a>
-          </div>
+          </div> --}}
         <div class="col-md-12">
           <table class="table">
             <thead>
@@ -66,7 +66,12 @@
                   <?php
                   } else {
                   ?>
-                  <td>Thẻ ATM</td>
+                  <td>Thẻ ATM
+                      <br>Mã GD:{{$payments[$bill->payment_id-1]->code_vnpay}}
+                      <br>Số tiền:{{$payments[$bill->payment_id-1]->money}}
+                      <br>Ngân hàng: {{$payments[$bill->payment_id-1]->code_bank}}
+                  </td>
+                  
                   <?php
                   }
                   ?>

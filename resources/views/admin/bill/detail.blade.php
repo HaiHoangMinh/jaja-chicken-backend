@@ -21,9 +21,9 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12">
+          {{-- <div class="col-md-12">
             <a href="{{URL::to('/print-bill/'.$bill->id)}}" class="btn btn-success float-right m-3">Xuất hóa đơn</a>
-          </div>
+          </div> --}}
         </div>
           <div class="col-md-12">
             <table class="table">
