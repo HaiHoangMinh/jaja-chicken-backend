@@ -46,7 +46,7 @@
                   <td><img src="{{$user->feature_image_path}}" alt="" class="" height="100" width="100"></td>
                    
                   <td>
-                    <a href="{{ route('users.edit', ['id'=> $user->id]) }}" class="btn btn-default ">Edit</a>
+                    {{-- <a href="{{ route('users.edit', ['id'=> $user->id]) }}" class="btn btn-default ">Edit</a> --}}
                     
                     <a data-url="{{ route('users.delete', ['id'=> $user->id]) }}"
                     href="" class="btn btn-danger action_delete ">Delete</a>

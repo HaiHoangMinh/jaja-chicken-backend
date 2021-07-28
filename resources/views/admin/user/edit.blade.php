@@ -77,7 +77,7 @@
                         <img src="{{$user->feature_image_path}}" alt="" height="100" width="100">
                     </div>        
                   </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                       <label >Sửa vai trò</label>
                       <select class="form-control select2_init " name="role_id[]" multiple >
                         <option value=""></option>
@@ -89,7 +89,7 @@
                     @error('password')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
-                    </div>
+                    </div> --}}
                     <button type="submit" class="btn btn-primary">Update</button>
                   </form>
             </div>

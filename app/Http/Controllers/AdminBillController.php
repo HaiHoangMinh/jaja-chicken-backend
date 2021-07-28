@@ -25,7 +25,7 @@ class AdminBillController extends Controller
         $this->bill_detail = $bill_detail;
         $this->product = $product;
     }
-
+    
     public function index()
     {
         $bills = $this->bill->orderBy('id','DESC')->paginate(10);

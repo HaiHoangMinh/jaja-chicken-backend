@@ -44,12 +44,12 @@ class AdminController extends Controller
             if ($remember !=null) {
                 Session::put('admin_username',$request->username);
                 Session::put('admin_password',$request->password);
-                return view('home');
+                return redirect()->to('/');
             }
             else {
                 Session::put('admin_username',null);
                 Session::put('admin_password',null);
-                return view('home');
+                return redirect()->to('/');
             }
             
         }
