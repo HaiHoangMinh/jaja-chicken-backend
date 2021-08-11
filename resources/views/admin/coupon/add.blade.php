@@ -33,7 +33,7 @@
                     </div>
                       <div class="form-group">
                         <label >Số lượng</label>
-                        <input type="text" class="form-control" placeholder="Nhập số lượng mã giảm giá"
+                        <input type="number" class="form-control" placeholder="Nhập số lượng mã giảm giá"
                                name = "coupon_time"
                         >
                     </div>
@@ -48,10 +48,16 @@
                       </div>
                       <div class="form-group">
                         <label >Số % hoặc tiền giảm</label>
-                        <input type="text" class="form-control" placeholder="Nhập số giảm của mã giảm giá"
+                        <input type="number" class="form-control" placeholder="Nhập số giảm của mã giảm giá"
                                name = "coupon_number"
                         >
                     </div>
+                    <div class="form-group">
+                      <label >Đơn hàng tối thiểu</label>
+                      <input type="number" class="form-control" placeholder="Nhập giá trị đơn hàng tối thiểu"
+                             name = "limit_bills"
+                      >
+                  </div>
                     <div class="form-group">
                       <label >Ngày bắt đầu</label>
                       <input type="text" class="form-control" placeholder="Ngày bắt đầu"

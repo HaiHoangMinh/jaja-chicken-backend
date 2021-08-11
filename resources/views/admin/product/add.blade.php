@@ -44,7 +44,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label >Giá món ăn</label>
-                        <input type="text" class="form-control @error('price') is-invalid @enderror" 
+                        <input type="number" class="form-control @error('price') is-invalid @enderror" 
                         placeholder="Nhập giá món ăn"
                                name = "price"
                                value="{{ old('price')}}"

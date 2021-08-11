@@ -23,9 +23,9 @@
                 <th scope="col">#</th>
                 <th scope="col">Tên mã giảm giá</th>
                 <th scope="col">Mã giảm giá</th>
-                <th scope="col">Số lượng mã</th>
-                <th scope="col">Tính năng mã</th>
-                <th scope="col">Số tiền giảm</th>
+                <th scope="col">Số lượng</th>
+                <th scope="col">Giảm</th>
+                <th scope="col">Đơn hàng tối thiểu</th>
                 <th scope="col">Ngày bắt dầu</th>
                 <th scope="col">Ngày kết thúc</th>
                 <th scope="col">Tình trạng</th>
@@ -39,8 +39,12 @@
                 <td>{{ $coupon->coupon_name }}</td>
                 <td>{{ $coupon->coupon_code }}</td>
                 <td>{{ $coupon->coupon_time }}</td>
-                <td>{{ $coupon->coupon_condition }}</td>
-                <td>{{ $coupon->coupon_number }}</td>
+                @if ( $coupon->coupon_condition == 1)
+                <td>{{ $coupon->coupon_number }}%</td>
+                @else
+                <td>{{ number_format($coupon->coupon_number,0,',','.') }}đ</td>
+                @endif
+                <td>{{ number_format($coupon->limit_bills,0,',','.') }}đ</td>
                 <td>{{ $coupon->date_start }}</td>
                 <td>{{ $coupon->date_end }}</td>
                 @if($coupon->coupon_status == 1)

@@ -58,6 +58,7 @@ class AdminCouponController extends Controller
                 'coupon_condition' => $request->coupon_condition,
                 'coupon_number' => $request->coupon_number,
                 'coupon_time' => $request->coupon_time,
+                'limit_bills' => $request->limit_bills,
                 'date_start' => $request->date_start,
                 'date_end' => $request->date_end,
                 
