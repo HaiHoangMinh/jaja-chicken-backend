@@ -74,10 +74,9 @@ class AdminCouponController extends Controller
         
 
     }
-    /*
     public function edit($id){
         $coupon = $this->coupon->find($id);
-        return view('admin.role.edit',compact('coupon'));
+        return view('admin.coupon.edit',compact('coupon'));
     }
     public function update($id,Request $request){
         try {
@@ -88,7 +87,9 @@ class AdminCouponController extends Controller
                 'coupon_condition' => $request->coupon_condition,
                 'coupon_number' => $request->coupon_number,
                 'coupon_time' => $request->coupon_time,
-                
+                'limit_bills' => $request->limit_bills,
+                'date_start' => $request->date_start,
+                'date_end' => $request->date_end,
             ]);
            
             DB::commit();
@@ -99,7 +100,6 @@ class AdminCouponController extends Controller
         }
 
     }
-    */
     public function delete($id){
         
         $this->coupon->find($id)->delete();

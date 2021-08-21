@@ -16,7 +16,7 @@
 @section('content')
      <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-@include('partials.content-header',[ 'name' => 'Promotions','key' =>'Add'])
+@include('partials.content-header',[ 'name' => 'Promotions','key' =>'Edit'])
 
     <!-- Main content -->
     <div class="content">

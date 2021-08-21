@@ -43,9 +43,9 @@ class AdminPromotionController extends Controller
             
         ];
         if ($request->slider_id !=0) {
-            if( DB::table('promotions')->where($request->slider_id)->first() != null)
+            if( DB::table('promotions')->where('slider_id',$request->slider_id)->first() != null)
             {
-            dd("Slider nay da duoc gan link khuyen mai");
+                dd("Slider nay da duoc gan link khuyen mai");
             }
         }
         $datapromotionUpdate['slider_id'] = $request->slider_id;

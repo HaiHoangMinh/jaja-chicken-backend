@@ -38,7 +38,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label >Giá món ăn</label>
-                        <input type="text" class="form-control" placeholder="Nhập giá món ăn"
+                        <input type="number" class="form-control" placeholder="Nhập giá món ăn"
                                name = "price"
                                value="{{$product->price}}"
                         >

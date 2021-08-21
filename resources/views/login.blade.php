@@ -13,7 +13,8 @@
     body {
         margin: 0;
         padding: 0;
-        background-color: darkred;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: linear-gradient(to bottom right, red, rgb(248, 164, 164));
         height: 100vh;
         }
         #login .container #login-row #login-column #login-box {

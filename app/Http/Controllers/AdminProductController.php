@@ -101,7 +101,7 @@ class AdminProductController extends Controller
         }
     public function edit($id){
         $product = $this->product->find($id);
-        $htmlOption = $this->getCategory($product->category_id);
+        $htmlOption = $this->getCategory();
         return view('admin.product.edit', compact('htmlOption','product'));
     }
     public function update(Request $request, $id){
@@ -113,9 +113,9 @@ class AdminProductController extends Controller
                 'price' => $request->price,
                 'content' => $request->content,
                 'user_id' => auth()->id(),
-                'category_id' => $request->category_id
     
             ];
+            $dataProductUpdate['category_id'] = ($request->category_id == 0 ) ? $this->product->find($id)->category_id : $request->category_id;
             $dataUploadFeatureImage = $this->storageTraitUpload($request,'feature_image_path','product');
             if (!empty($dataUploadFeatureImage)) {
                 $dataProductUpdate['feature_image_name'] = $dataUploadFeatureImage['file_name'];

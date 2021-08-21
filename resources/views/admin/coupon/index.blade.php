@@ -53,7 +53,7 @@
                      <td style="color: red">Hết</td>
                 @endif
                 <td>
-                  {{-- <a href="{{ route('coupons.edit', ['id'=> $coupon->id]) }}" class="btn btn-default ">Edit</a> --}}
+                   <a href="{{ route('coupons.edit', ['id'=> $coupon->id]) }}" class="btn btn-default ">Edit</a>
                   <a href="{{ route('coupons.delete', ['id'=> $coupon->id]) }}" class="btn btn-danger ">Delete</a>
                 </td>
                 </tr>
