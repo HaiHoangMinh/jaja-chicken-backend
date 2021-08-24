@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             ['name' => 'Admin', 'username' => 'admin', 'password' => '123456789',
-            'id' => '1998'], 
+            'id' => '1998','feature_image_path' => 'https://thumbs.dreamstime.com/z/gentleman-avatar-profile-icon-image-default-user-hairstyle-vector-illustration-182197665.jpg'], 
             
         ]);
         DB::table('role_user')->insert([
