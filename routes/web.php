@@ -241,7 +241,7 @@ Route::prefix('admin')->group(function () {
         ]);
         Route::get('/delete/{id}', [
             'as' => 'customers.delete',
-            'uses' => 'AdminRoleController@delete',
+            'uses' => 'AdminCustomerController@delete'
         ]);
         
     });

@@ -22,19 +22,6 @@ class AdminCustomerController extends Controller
 
     }
     public function delete($id){
-        try {
-            $this->customer->find($id)->delete();
-            return response()->json([
-                'code' => 200,
-                'message' => 'success',
-            ], status:200);
-            
-        } catch (\Exception $th) {
-            Log::error('Message'.$th->getMessage().'Line: ' . $th->getLine());
-            return response()->json([
-                'code' => 500,
-                'message' => 'failed',
-            ], status:500);
-        }
+        $this->customer->find($id)->delete();
     }
 }

@@ -46,8 +46,7 @@
                   <th>{{$customer->address}}</th>
                    
                   <td>
-                    <a data-url="{{ route('customers.delete', ['id'=> $customer->id]) }}"
-                    href="" class="btn btn-danger action_delete ">Delete</a>
+                    <a href="{{ route('customers.delete', ['id'=> $customer->id]) }}" class="btn btn-danger ">Delete</a>
                   </td>
                   </tr>
               
