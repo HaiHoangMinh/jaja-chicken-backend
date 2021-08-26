@@ -17,11 +17,11 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('price');
-            $table->string('feature_image_path')->nullable();
+            $table->string('feature_image_path');
             $table->text(('content'));
             $table->integer('user_id');
             $table->integer('category_id');
-            $table->integer('view_count');
+            $table->integer('view_count')->default(0);
             $table->timestamps();
         });
     }
