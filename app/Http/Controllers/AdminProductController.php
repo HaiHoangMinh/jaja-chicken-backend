@@ -52,9 +52,7 @@ class AdminProductController extends Controller
     
     public function store(ProductAddRequest $request)
     {
-        try {
-            DB::beginTransaction();
-            $dataProductCreate = [
+        $dataProductCreate = [
                 'name' => $request->name,
                 'price' => $request->price,
                 'content' => $request->content,
@@ -91,12 +89,16 @@ class AdminProductController extends Controller
                 }
             }
             $product->tags()->attach($tagIds); // Laravel eloquent relationships ManyToMany
+        /*
+        try {
+            DB::beginTransaction();
+            
             DB::commit(); // Up du lien len db
             return redirect()->route('products.index');
         } catch (\Exception $ex) {
             DB::rollBack(); // Backup lai du lieu khi co loi
             Log::error('Message'.$ex->getMessage().'Line: ' . $ex->getLine());
-        }
+        }*/
         
         }
     public function edit($id){
