@@ -19,9 +19,9 @@ class CreateBillsTable extends Migration
             $table->integer('shipping_id');
             $table->dateTime('date_order');
             $table->float('total');
-            $table->int('payment_id');
+            $table->integer('payment_id');
             $table->string('note');
-            $table->int('status');
+            $table->integer('status');
             $table->timestamps();
         });
     }
