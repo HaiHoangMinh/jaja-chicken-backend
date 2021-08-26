@@ -24,7 +24,7 @@ class CreateCouponsTable extends Migration
             $table->string('date_end');
             $table->integer('status')->default(1);
             $table->integer('limit_bills');
-            $table->string('coupon_used');
+            $table->string('coupon_used')->nullable();
             $table->timestamps();
         });
     }
