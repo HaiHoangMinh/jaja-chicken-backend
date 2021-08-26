@@ -45,8 +45,8 @@
                 <td>{{ number_format($coupon->coupon_number,0,',','.') }}đ</td>
                 @endif
                 <td>{{ number_format($coupon->limit_bills,0,',','.') }}đ</td>
-                <td>{{ $coupon->date_start }}</td>
-                <td>{{ $coupon->date_end }}</td>
+                <td>{{ date('d-m-Y', strtotime($coupon->date_start)) }}</td>
+                <td>{{ date('d-m-Y', strtotime($coupon->date_end)) }}</td>
                 @if($coupon->coupon_status == 1)
                   <td style="color: green">Còn</td>
                 @else 

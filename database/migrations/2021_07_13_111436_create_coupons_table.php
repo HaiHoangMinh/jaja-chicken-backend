@@ -20,6 +20,11 @@ class CreateCouponsTable extends Migration
             $table->integer('coupon_time');
             $table->integer('coupon_condition');
             $table->integer('coupon_number');
+            $table->string('date_start');
+            $table->string('date_end');
+            $table->integer('status');
+            $table->integer('limit_bills');
+            $table->string('coupon_used');
             $table->timestamps();
         });
     }

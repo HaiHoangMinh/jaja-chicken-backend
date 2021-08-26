@@ -21,23 +21,23 @@ class AdminCouponController extends Controller
     public function index()
     {
         $coupons = $this->coupon->latest()->paginate(15);
-        $today = Carbon::now('Asia/Ho_Chi_Minh')->format('d/m/Y');
-        foreach ($coupons as $key => $coupon) {
-            if(strtotime($today) > strtotime($coupon->date_end) )
+        $today = Carbon::now("Asia/Ho_Chi_Minh");
+        foreach ($coupons as $key => $coupon ) {
+            if(strtotime($today) > strtotime($coupon->date_end) || $coupon->coupon_time == 0 )
             {
                 DB::table('coupons')
-                ->where('id',$key)
+                ->where('id',$coupon->id)
                 ->update([
                 'coupon_status' => 0,
                 ]);
-            }
-            if ($coupon->coupon_time == 0) {
+            } else {
                 DB::table('coupons')
-                ->where('id',$key)
+                ->where('id',$coupon->id)
                 ->update([
-                'coupon_status' => 0,
+                'coupon_status' => 1,
                 ]);
             }
+           
         }
         return view('admin.coupon.index',compact('coupons','today'));
 

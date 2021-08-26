@@ -20,9 +20,9 @@ class CreatePromotionsTable extends Migration
             $table->string('content');
             $table->string('meta_desc');
             $table->string('meta_keyword');
-            $table->integer('status');
-            $table->string('image');
-
+            $table->integer('slider_id');
+            $table->string('slug');
+            $table->string('feature_image_path');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBillDetailsTable extends Migration
+class CreateStatisticalTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateBillDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bill_details', function (Blueprint $table) {
+        Schema::create('statistical', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('bill_id');
-            $table->integer('product_id');
-            $table->integer('quantity');
-            $table->timestamps();
+            $table->string('date');
+            $table->integer('total_sales');
+            $table->integer('total_bills');
         });
     }
 
@@ -29,6 +28,6 @@ class CreateBillDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bill_details');
+        Schema::dropIfExists('statistical');
     }
 }
