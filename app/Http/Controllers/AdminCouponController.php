@@ -50,7 +50,10 @@ class AdminCouponController extends Controller
     }
     public function store(Request $request)
     {
-        $this->coupon->create([
+        
+        try {
+            DB::beginTransaction();
+            $this->coupon->create([
                 'coupon_name' => $request->coupon_name,
                 'coupon_code' => $request->coupon_code,
                 'coupon_condition' => $request->coupon_condition,
@@ -61,16 +64,12 @@ class AdminCouponController extends Controller
                 'date_end' => $request->date_end,
                 
             ]);
-        /*try {
-            DB::beginTransaction();
-            
-            
             DB::commit();
             return redirect()->route('coupons.index');
         } catch (\Exception $th) {
             DB::rollBack();
             Log::error("loi: " . $th->getMessage() . "dong " . $th->getLine());
-        }*/
+        }
 
         
 
