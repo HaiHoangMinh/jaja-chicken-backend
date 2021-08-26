@@ -12,7 +12,7 @@ class WardsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        DB::table('xaphuongthitran')->insert([
             [
                 'xaid'=>112,
                 'name'=>'Phường Thụy Khuê',
