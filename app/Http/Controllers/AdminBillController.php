@@ -64,14 +64,14 @@ class AdminBillController extends Controller
             return response()->json([
                 'code' => 200,
                 'message' => 'success',
-            ], status:200);
+            ]);
             
         } catch (\Exception $th) {
             Log::error('Message'.$th->getMessage().'Line: ' . $th->getLine());
             return response()->json([
                 'code' => 500,
                 'message' => 'failed',
-            ], status:500);
+            ]);
         }
     }
     

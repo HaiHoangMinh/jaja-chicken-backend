@@ -48,7 +48,7 @@ class AdminPromotionController extends Controller
                 dd("Slider nay da duoc gan link khuyen mai");
             }
         }
-        $datapromotionUpdate['slider_id'] = $request->slider_id;
+        $datapromotionCreate['slider_id'] = $request->slider_id;
         $dataUploadFeatureImage = $this->storageTraitUpload($request,'feature_image_path','promotion');
         if (!empty($dataUploadFeatureImage)) {
             //$datapromotionCreate['feature_image_name'] = $dataUploadFeatureImage['file_name'];
@@ -119,14 +119,14 @@ class AdminPromotionController extends Controller
             return response()->json([
                 'code' => 200,
                 'message' => 'success',
-            ], status:200);
+            ]);
             
         } catch (\Exception $th) {
             Log::error('Message'.$th->getMessage().'Line: ' . $th->getLine());
             return response()->json([
                 'code' => 500,
                 'message' => 'failed',
-            ], status:500);
+            ]);
         }
     }
 }
