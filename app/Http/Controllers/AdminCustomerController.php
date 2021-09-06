@@ -23,5 +23,6 @@ class AdminCustomerController extends Controller
     }
     public function delete($id){
         $this->customer->find($id)->delete();
+        return redirect()->route('customers.index');
     }
 }

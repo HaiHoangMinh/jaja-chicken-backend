@@ -83,15 +83,18 @@ class AdminProductController extends Controller
                     
                 }
     
-            }
+            } 
             // Insert product tags
-            if (!empty($request->tags)) {
-                foreach ($request->tags as $tagItem) {
-                    $tagInstance = $this->tags->firstOrCreate(['name'=>$tagItem]);
-                    $tagIds[] = $tagInstance->id; // Lay tag_id tu data insert  
+            if ($request->tags) {
+                if (!empty($request->tags)) {
+                    foreach ($request->tags as $tagItem) {
+                        $tagInstance = $this->tags->firstOrCreate(['name'=>$tagItem]);
+                        $tagIds[] = $tagInstance->id; // Lay tag_id tu data insert  
+                    }
                 }
+                $product->tags()->attach($tagIds); // Laravel eloquent relationships ManyToMany
             }
-            $product->tags()->attach($tagIds); // Laravel eloquent relationships ManyToMany
+            
             DB::commit(); // Up du lien len db
             return redirect()->route('products.index');
         } catch (\Exception $ex) {

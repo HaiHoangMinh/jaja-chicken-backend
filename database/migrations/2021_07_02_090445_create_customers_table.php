@@ -20,6 +20,7 @@ class CreateCustomersTable extends Migration
             $table->string('password');
             $table->string('phone_number');
             $table->string('address');
+            $table->string('feature_image_path')->nullable();
             $table->timestamps();
         });
     }

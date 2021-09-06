@@ -43,7 +43,11 @@ class HomeController extends Controller
                 $count += 1 ;
             }
         }
-        $result = number_format(($count/$bills->count())*100, 2, ',', '.');
+        if ($bills->count() != 0) {
+            $result = number_format(($count/$bills->count())*100, 2, ',', '.');
+        } else {
+            $result = 0;
+        }
         $customers = DB::table('customers')->get();
         foreach ($customers as $key => $customer) {
             if (Carbon::parse($customer->created_at) < $date_end && Carbon::parse($customer->created_at) > $date_start ) {
