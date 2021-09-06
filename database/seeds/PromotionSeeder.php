@@ -20,7 +20,7 @@ class PromotionSeeder extends Seeder
                 'slider_id'=>1,
                 'meta_desc'=>'SINH NHẬT',
                 'meta_keyword'=>'jaja',
-                'feature_image_path'=>'1',
+                'feature_image_path'=>'https://fv9-3.failiem.lv/thumb_show.php?i=v8ykj3ca4&view',
                 'slug' => 'dat-tiec-sinh-nhat-uu-dai-dac-biet'
             ],
             [
@@ -29,9 +29,9 @@ class PromotionSeeder extends Seeder
                 'desc'=>'❣️Chúc các bạn có một ngày Thất Tịch vui vẻ bên người thân yêu ❣️',
                 'content'=>'<p>Theo truyền thuyết nh&agrave; 𝗝𝗔𝗝𝗔 .....<br />Những người&nbsp;<a class="oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 nc684nl6 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl oo9gr5id gpro0wi8 lrazzd5p" tabindex="0" role="link" href="https://www.facebook.com/hashtag/%C4%83n?__eep__=6&amp;__tn__=*NK*F">#ĂN</a>&nbsp;<a class="oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 nc684nl6 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl oo9gr5id gpro0wi8 lrazzd5p" tabindex="0" role="link" href="https://www.facebook.com/hashtag/g%C3%A0?__eep__=6&amp;__tn__=*NK*F">#G&Agrave;</a>&nbsp;<a class="oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 nc684nl6 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl oo9gr5id gpro0wi8 lrazzd5p" tabindex="0" role="link" href="https://www.facebook.com/hashtag/jaja?__eep__=6&amp;__tn__=*NK*F">#JAJA</a>&nbsp;v&agrave;o ng&agrave;y lễ&nbsp;<a class="oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 nc684nl6 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl oo9gr5id gpro0wi8 lrazzd5p" tabindex="0" role="link" href="https://www.facebook.com/hashtag/th%E1%BA%A5t?__eep__=6&amp;__tn__=*NK*F">#THẤT</a>&nbsp;<a class="oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 nc684nl6 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl oo9gr5id gpro0wi8 lrazzd5p" tabindex="0" role="link" href="https://www.facebook.com/hashtag/t%E1%BB%8Bch?__eep__=6&amp;__tn__=*NK*F">#TỊCH</a>&nbsp;<span class="pq6dq46d tbxw36s4 knj5qynh kvgmc6g5 ditlmg2l oygrvhab nvdbi5me sf5mxxl7 gl3lb2sf hhz5lgdu"><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t6c/1/16/2764.png" alt="❤" width="16" height="16" /></span><br /><br /><span class="pq6dq46d tbxw36s4 knj5qynh kvgmc6g5 ditlmg2l oygrvhab nvdbi5me sf5mxxl7 gl3lb2sf hhz5lgdu"><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t51/1/16/1f449.png" alt="👉" width="16" height="16" /></span>nếu&nbsp;<a class="oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 nc684nl6 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl oo9gr5id gpro0wi8 lrazzd5p" tabindex="0" role="link" href="https://www.facebook.com/hashtag/%C4%91%E1%BB%99cth%C3%A2n?__eep__=6&amp;__tn__=*NK*F">#độcth&acirc;n</a>&nbsp;th&igrave; sẽ nhanh ch&oacute;ng t&igrave;m được &yacute; chung nh&acirc;n<br /><span class="pq6dq46d tbxw36s4 knj5qynh kvgmc6g5 ditlmg2l oygrvhab nvdbi5me sf5mxxl7 gl3lb2sf hhz5lgdu"><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t51/1/16/1f449.png" alt="👉" width="16" height="16" /></span>c&ograve;n nếu đ&atilde; c&oacute; đ&ocirc;i c&oacute; cặp th&igrave; sẽ&nbsp;<a class="oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 nc684nl6 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl oo9gr5id gpro0wi8 lrazzd5p" tabindex="0" role="link" href="https://www.facebook.com/hashtag/b%C3%AAnnhau?__eep__=6&amp;__tn__=*NK*F">#b&ecirc;nnhau</a>&nbsp;trọn kiếp kh&ocirc;ng chia l&igrave;a<br /><br /><span class="pq6dq46d tbxw36s4 knj5qynh kvgmc6g5 ditlmg2l oygrvhab nvdbi5me sf5mxxl7 gl3lb2sf hhz5lgdu"><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/teb/1/16/2763.png" alt="❣️" width="16" height="16" /></span>Ch&uacute;c c&aacute;c bạn c&oacute; một ng&agrave;y Thất Tịch vui vẻ b&ecirc;n người th&acirc;n y&ecirc;u&nbsp;<span class="pq6dq46d tbxw36s4 knj5qynh kvgmc6g5 ditlmg2l oygrvhab nvdbi5me sf5mxxl7 gl3lb2sf hhz5lgdu"><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/teb/1/16/2763.png" alt="❣️" width="16" height="16" /></span><br /><br />------------------------<br /><span class="pq6dq46d tbxw36s4 knj5qynh kvgmc6g5 ditlmg2l oygrvhab nvdbi5me sf5mxxl7 gl3lb2sf hhz5lgdu"><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/tf/1/16/1f425.png" alt="🐥" width="16" height="16" /></span>&nbsp;JAJA CHICKEN&nbsp;<span class="pq6dq46d tbxw36s4 knj5qynh kvgmc6g5 ditlmg2l oygrvhab nvdbi5me sf5mxxl7 gl3lb2sf hhz5lgdu"><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/tf/1/16/1f425.png" alt="🐥" width="16" height="16" /></span>ĂN G&Agrave; THẢ GA KH&Ocirc;NG LO VỀ GI&Aacute;&nbsp;<span class="pq6dq46d tbxw36s4 knj5qynh kvgmc6g5 ditlmg2l oygrvhab nvdbi5me sf5mxxl7 gl3lb2sf hhz5lgdu"><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t50/1/16/1f525.png" alt="🔥" width="16" height="16" /></span><br /><span class="pq6dq46d tbxw36s4 knj5qynh kvgmc6g5 ditlmg2l oygrvhab nvdbi5me sf5mxxl7 gl3lb2sf hhz5lgdu"><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t22/1/16/260e.png" alt="☎️" width="16" height="16" /></span>&nbsp;0383 766 181<br /><span class="pq6dq46d tbxw36s4 knj5qynh kvgmc6g5 ditlmg2l oygrvhab nvdbi5me sf5mxxl7 gl3lb2sf hhz5lgdu"><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t22/1/16/260e.png" alt="☎️" width="16" height="16" /></span>&nbsp;0346 000 686<br /><span class="pq6dq46d tbxw36s4 knj5qynh kvgmc6g5 ditlmg2l oygrvhab nvdbi5me sf5mxxl7 gl3lb2sf hhz5lgdu"><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/tf6/1/16/1f3e0.png" alt="🏠" width="16" height="16" /></span>&nbsp;269 Mỹ Cầu<br /><span class="pq6dq46d tbxw36s4 knj5qynh kvgmc6g5 ditlmg2l oygrvhab nvdbi5me sf5mxxl7 gl3lb2sf hhz5lgdu"><img src="https://static.xx.fbcdn.net/images/emoji.php/v9/tdd/1/16/1f6f5.png" alt="🛵" width="16" height="16" /></span>&nbsp;Free ship đơn từ 100k , b&aacute;n k&iacute;nh 5km</p>',
                 'slider_id'=>2,
-                'meta_desc'=>'Thành phố Hà Nội',
+                'meta_desc'=>'jaja',
                 'meta_keyword'=>'jaja',
-                'feature_image_path'=>'1',
+                'feature_image_path'=>'https://fv9-2.failiem.lv/thumb_show.php?i=hvgesydfr&view',
                 'slug' => 'dat-tiec-sinh-nhat-uu-dai-dac-biet'
             ],
             [
@@ -42,7 +42,7 @@ class PromotionSeeder extends Seeder
                 'slider_id'=>3,
                 'meta_desc'=>'jaja',
                 'meta_keyword'=>'jaja',
-                'feature_image_path'=>'1',
+                'feature_image_path'=>'https://fv9-3.failiem.lv/thumb_show.php?i=qezpqtds8&view',
                 'slug' => 'jaja-corona'
             ],
             [
@@ -86,7 +86,7 @@ class PromotionSeeder extends Seeder
                 'slider_id'=>0,
                 'meta_desc'=>'jaja',
                 'meta_keyword'=>'jaja',
-                'feature_image_path'=>'1',
+                'feature_image_path'=>'https://fv9-3.failiem.lv/thumb_show.php?i=bj5m8pnr8&view',
                 'slug' => 'mua-tong-ket-cung-jaja-chicken'
             ],
             [
@@ -97,7 +97,7 @@ class PromotionSeeder extends Seeder
                 'slider_id'=>0,
                 'meta_desc'=>'jaja',
                 'meta_keyword'=>'jaja',
-                'feature_image_path'=>'1',
+                'feature_image_path'=>'https://fv9-3.failiem.lv/thumb_show.php?i=txfr2d7jv&view',
                 'slug' => 'uu-dai-hotttt-dau-thang'
             ],
         ]);
