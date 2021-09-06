@@ -16,10 +16,10 @@ class Payments extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('payment_method');
-            $table->integer('money');
-            $table->string('vnp_paydate');
-            $table->string('code_vnpay');
-            $table->string('code_bank');
+            $table->integer('money')->default(0);
+            $table->string('vnp_paydate')->nullable();
+            $table->string('code_vnpay')->nullable();
+            $table->string('code_bank')->nullable();
             $table->timestamps();
         });
     }
