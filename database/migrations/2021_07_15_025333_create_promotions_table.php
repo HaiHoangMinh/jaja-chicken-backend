@@ -17,12 +17,12 @@ class CreatePromotionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('desc');
-            $table->string('content');
+            $table->text('content');
             $table->string('meta_desc');
             $table->string('meta_keyword');
             $table->integer('slider_id')->nullable();
             $table->string('slug');
-            $table->string('feature_image_path');
+            $table->text('feature_image_path');
             $table->timestamps();
         });
     }
