@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('price');
-            $table->string('feature_image_path',1000);
+            $table->text('feature_image_path');
             $table->text(('content'));
             $table->integer('user_id')->nullable();
             $table->integer('category_id');
