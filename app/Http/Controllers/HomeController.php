@@ -52,10 +52,6 @@ class HomeController extends Controller
         foreach ($customers as $key => $customer) {
             if (strtotime($customer->created_at) < $date_end && strtotime($customer->created_at) > $date_start ) {
                 $count_customer += 1;
-            }
-            if ($bill->status == 3) {
-                $count += 1 ;
-            }
         }
         $products = DB::table('products')->get();
         foreach ($products as $key => $product) {
