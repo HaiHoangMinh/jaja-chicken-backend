@@ -39,12 +39,6 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id'=>7,
-                'name'=>'Salad',
-                'parent_id'=>2,
-                'slug' => 'salad',
-            ],
-            [
-                'id'=>8,
                 'name'=>'Đồ ăn kèm',
                 'parent_id'=>2,
                 'slug' => 'do-an-kem',
@@ -62,13 +56,13 @@ class CategorySeeder extends Seeder
                 'slug' => 'combo',
             ],
             [
-                'id'=>9,
+                'id'=>8,
                 'name'=>'Combo gia đình',
                 'parent_id'=>4,
                 'slug' => 'combo-gia-dinh',
             ],
             [
-                'id'=>10,
+                'id'=>9,
                 'name'=>'Combo siêu ưu đãi',
                 'parent_id'=>0,
                 'slug' => 'combo-sieu-uu-dai',
