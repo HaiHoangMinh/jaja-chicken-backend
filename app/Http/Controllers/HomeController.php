@@ -36,7 +36,7 @@ class HomeController extends Controller
         $date_end = Carbon::now('Asia/Ho_Chi_Minh');
         $bills = DB::table('bills')->get();
         foreach ($bills as $key => $bill) {
-            if (strtotime($date_end) > strtotime($bill->date_order) &&  strtotime($bill->date_order) > strtotime($date_start)) {
+            if (strtotime($bill->date_order) < strtotime($date_end) && strtotime($bill->date_order) > strtotime($date_start) ) {
                 $count_bills += 1;
             }
             if ($bill->status == 3) {
@@ -50,8 +50,10 @@ class HomeController extends Controller
         }
         $customers = DB::table('customers')->get();
         foreach ($customers as $key => $customer) {
-            if (strtotime($customer->created_at) < $date_end && strtotime($customer->created_at) > $date_start ) {
+            if (strtotime($customer->created_at) < strtotime($date_end) && strtotime($customer->created_at) > strtotime($date_start) ) {
                 $count_customer += 1;
+            }
+            
         }
         $products = DB::table('products')->get();
         foreach ($products as $key => $product) {
@@ -97,7 +99,7 @@ class HomeController extends Controller
         $statistical = DB::table('statistical')->get();
         $output = "";
         foreach ($statistical as $key => $item) {
-            if (Carbon::parse($item->date) < $date_end && Carbon::parse($item->date) > $date_start ) {
+            if (strtotime($item->date) < $date_end && strtotime($item->date) > $date_start ) {
                 $output .= '
                 <tr>
                 <th scope="row">'.$item->id.'</th>
