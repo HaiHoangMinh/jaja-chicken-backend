@@ -15,12 +15,12 @@ class CreateBillsTable extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('customer_id');
-            $table->integer('shipping_id');
+            $table->integer('customer_id')->nullable();
+            $table->integer('shipping_id')->nullable();
             $table->dateTime('date_order');
             $table->float('total');
             $table->integer('payment_id');
-            $table->string('note');
+            $table->string('note')->nullable();
             $table->integer('status');
             $table->timestamps();
         });
