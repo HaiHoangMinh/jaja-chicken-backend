@@ -16,13 +16,13 @@ class CreatePromotionsTable extends Migration
         Schema::create('promotions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('desc');
-            $table->text('content');
+            $table->string('desc',1000);
+            $table->longText('content');
             $table->string('meta_desc');
             $table->string('meta_keyword');
             $table->integer('slider_id')->nullable();
             $table->string('slug');
-            $table->text('feature_image_path');
+            $table->string('feature_image_path',1000);
             $table->timestamps();
         });
     }
