@@ -19,8 +19,8 @@ class CreateFeedbacksTable extends Migration
             $table->integer('product_id');
             $table->string('date');
             $table->string('content');
-            $table->integer('status');
-            $table->string('reply');
+            $table->integer('status')->default(0);
+            $table->string('reply')->nullable();
             $table->timestamps();
         });
     }

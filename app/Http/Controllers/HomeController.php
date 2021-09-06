@@ -36,7 +36,7 @@ class HomeController extends Controller
         $date_end = Carbon::now('Asia/Ho_Chi_Minh');
         $bills = DB::table('bills')->get();
         foreach ($bills as $key => $bill) {
-            if (Carbon::parse($bill->date_order) < $date_end && Carbon::parse($bill->date_order) > $date_start ) {
+            if (strtotime($date_end) > strtotime($bill->date_order) &&  strtotime($bill->date_order) > strtotime($date_start)) {
                 $count_bills += 1;
             }
             if ($bill->status == 3) {
@@ -50,7 +50,7 @@ class HomeController extends Controller
         }
         $customers = DB::table('customers')->get();
         foreach ($customers as $key => $customer) {
-            if (Carbon::parse($customer->created_at) < $date_end && Carbon::parse($customer->created_at) > $date_start ) {
+            if (strtotime($customer->created_at) < $date_end && strtotime($customer->created_at) > $date_start ) {
                 $count_customer += 1;
             }
             if ($bill->status == 3) {
