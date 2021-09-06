@@ -20,7 +20,7 @@ class PromotionSeeder extends Seeder
                 'slider_id'=>1,
                 'meta_desc'=>'SINH NHẬT',
                 'meta_keyword'=>'jaja',
-                'feature_image_path'=>'https://scontent.fhan2-2.fna.fbcdn.net/v/t1.6435-9/116155939_155484552810128_8958048070849407794_n.png?_nc_cat=102&ccb=1-5&_nc_sid=730e14&_nc_ohc=GR-CEj-QIjwAX_wfst5&_nc_ht=scontent.fhan2-2.fna&oh=b009df075137329995d68b49df59ccb7&oe=615D20AF',
+                'feature_image_path'=>'1',
                 'slug' => 'dat-tiec-sinh-nhat-uu-dai-dac-biet'
             ],
             [
@@ -31,7 +31,7 @@ class PromotionSeeder extends Seeder
                 'slider_id'=>2,
                 'meta_desc'=>'Thành phố Hà Nội',
                 'meta_keyword'=>'jaja',
-                'feature_image_path'=>'https://scontent.fhan2-2.fna.fbcdn.net/v/t1.6435-9/118464744_164864545205462_3013913295243705682_n.png?_nc_cat=110&ccb=1-5&_nc_sid=730e14&_nc_ohc=Js1GLWvVfh0AX8Msnt0&_nc_ht=scontent.fhan2-2.fna&oh=defd73b7140aaed7db0d263345ae92dd&oe=615A18D7',
+                'feature_image_path'=>'1',
                 'slug' => 'dat-tiec-sinh-nhat-uu-dai-dac-biet'
             ],
             [
@@ -42,7 +42,7 @@ class PromotionSeeder extends Seeder
                 'slider_id'=>3,
                 'meta_desc'=>'jaja',
                 'meta_keyword'=>'jaja',
-                'feature_image_path'=>'https://scontent.fhan2-2.fna.fbcdn.net/v/t1.6435-9/117592795_162477918777458_8103968936704946635_n.png?_nc_cat=102&ccb=1-5&_nc_sid=730e14&_nc_ohc=XoiFKrsL7cgAX-3wELI&_nc_ht=scontent.fhan2-2.fna&oh=528dc3ca1ef493a164ef736c426b152b&oe=615B999B',
+                'feature_image_path'=>'1',
                 'slug' => 'jaja-corona'
             ],
             [
@@ -86,7 +86,7 @@ class PromotionSeeder extends Seeder
                 'slider_id'=>0,
                 'meta_desc'=>'jaja',
                 'meta_keyword'=>'jaja',
-                'feature_image_path'=>'https://scontent.fhan2-4.fna.fbcdn.net/v/t1.6435-9/107901932_149455093413074_6008742720088071893_n.png?_nc_cat=105&ccb=1-5&_nc_sid=730e14&_nc_ohc=YOcA6xkmRb0AX9rQT8s&_nc_ht=scontent.fhan2-4.fna&oh=7bb04ea46bdf42d0d8403d1c606bf9ab&oe=615CA4B1',
+                'feature_image_path'=>'1',
                 'slug' => 'mua-tong-ket-cung-jaja-chicken'
             ],
             [
@@ -97,7 +97,7 @@ class PromotionSeeder extends Seeder
                 'slider_id'=>0,
                 'meta_desc'=>'jaja',
                 'meta_keyword'=>'jaja',
-                'feature_image_path'=>'https://scontent.fhan2-3.fna.fbcdn.net/v/t1.6435-9/110080857_152529939772256_1068793690481574166_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=730e14&_nc_ohc=wpQYi0Eo3gUAX9sVeNx&_nc_ht=scontent.fhan2-3.fna&oh=bf11a6c952226200df994287ec4cf2be&oe=615A7C00',
+                'feature_image_path'=>'1',
                 'slug' => 'uu-dai-hotttt-dau-thang'
             ],
         ]);
