@@ -239,6 +239,10 @@ Route::prefix('admin')->group(function () {
             'as' => 'customers.index',
             'uses' => 'AdminCustomerController@index'
         ]);
+        Route::get('/history/{id}', [
+            'as' => 'customers.history',
+            'uses' => 'AdminCustomerController@history'
+        ]);
         Route::get('/delete/{id}', [
             'as' => 'customers.delete',
             'uses' => 'AdminCustomerController@delete'

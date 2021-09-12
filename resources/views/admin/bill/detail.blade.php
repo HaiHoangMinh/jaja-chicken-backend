@@ -24,6 +24,9 @@
           {{-- <div class="col-md-12">
             <a href="{{URL::to('/print-bill/'.$bill->id)}}" class="btn btn-success float-right m-3">Xuất hóa đơn</a>
           </div> --}}
+          <div class="col-md-12">
+            <a href="{{URL::to('/admin/bills')}}" class="btn btn-success float-right m-3">Quay lại</a>
+        </div>
         </div>
           <div class="col-md-12">
             <table class="table">

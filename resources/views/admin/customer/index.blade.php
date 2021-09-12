@@ -46,6 +46,7 @@
                   <th>{{$customer->address}}</th>
                    
                   <td>
+                    <a href="{{ route('customers.history', ['id'=> $customer->id]) }}" class="btn btn-default ">Xem TT</a>
                     <a href="{{ route('customers.delete', ['id'=> $customer->id]) }}" class="btn btn-danger ">Delete</a>
                   </td>
                   </tr>
