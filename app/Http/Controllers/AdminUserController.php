@@ -56,9 +56,6 @@ class AdminUserController extends Controller
             DB::rollBack();
             Log::error("loi: " . $th->getMessage() . "dong " . $th->getLine());
         }
-
-        
-
     }
     
     public function edit($id){
@@ -76,7 +73,6 @@ class AdminUserController extends Controller
                 'username' => $request->username,
                 'password' => md5($request->password)
             ];
-            dd($request->feature_image_path);
             $dataUploadFeatureImage = $this->storageTraitUpload($request,'feature_image_path','product');
             if (!empty($dataUploadFeatureImage)) {
                 //$dataProductUpdate['feature_image_name'] = $dataUploadFeatureImage['file_name'];

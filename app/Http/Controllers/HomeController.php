@@ -93,13 +93,12 @@ class HomeController extends Controller
     }
     public function filter_data(Request $request)
     {
-       
         $date_start = Carbon::parse($request->date_start); 
         $date_end = Carbon::parse($request->date_end)->addHours(24); ;
         $statistical = DB::table('statistical')->get();
         $output = "";
         foreach ($statistical as $key => $item) {
-            if (strtotime($item->date) < $date_end && strtotime($item->date) > $date_start ) {
+            if (strtotime($item->date) < strtotime($date_end) && strtotime($item->date) > strtotime($date_start) ) {
                 $output .= '
                 <tr>
                 <th scope="row">'.$item->id.'</th>
