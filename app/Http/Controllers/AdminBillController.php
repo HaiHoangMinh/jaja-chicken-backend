@@ -7,7 +7,9 @@ use App\BillDetail as AppBillDetail;
 use PDF;
 use App\Customer;
 use App\BillDetail;
+use App\Payment;
 use App\Product;
+use App\Shipping;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -30,8 +32,8 @@ class AdminBillController extends Controller
     {
         $bills = $this->bill->orderBy('id','DESC')->paginate(10);
         $customers = $this->customer->all();
-        $shippings = DB::table('shippings')->get();
-        $payments = DB::table('payments')->get();
+        $shippings = Shipping::all();
+        $payments = Payment::all();
         return view('admin.bill.index',compact('bills','customers','shippings','payments'));
 
     }

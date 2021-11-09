@@ -76,3 +76,119 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "@fancyapps/fancybox": "^3.5.7",
+        "axios": "^0.21",
+        "bootstrap": "^4.6.0",
+        "jquery": "^3.6",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "popper.js": "^1.16.1",
+        "postcss": "^8.1.14",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.32.11",
+        "sass-loader": "^11.0.1",
+        "simplebar": "^5.3.6",
+        "vue": "^2.6.14",
+        "vue-loader": "^15.9.8",
+        "vue-read-more": "^1.1.1",
+        "vue-router": "^3.5.2",
+        "vue-template-compiler": "^2.6.14",
+        "vuex": "^3.6.2",
+        "yubinbango-core2": "^0.6.3"
+    },
+    "dependencies": {
+        "v-calendar": "^2.3.4",
+        "vue-cookies": "^1.7.4",
+        "vue-cool-lightbox": "^2.7.4",
+        "vue-loading-overlay": "^3.4.2",
+        "vue-notification": "^1.3.20",
+        "vue-select": "^3.13.2"
+    }
+}
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0",
+        "barryvdh/laravel-dompdf": "^0.9.0",
+        "fruitcake/laravel-cors": "^2.0",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "laravel/framework": "^8.54",
+        "laravel/helpers": "^1.4",
+        "laravel/passport": "^10.1",
+        "laravel/sanctum": "^2.11",
+        "laravel/tinker": "^2.5",
+        "league/flysystem-aws-s3-v3": "1.0.29",
+        "nwidart/laravel-modules": "^8.2",
+        "spatie/laravel-permission": "^5.1"
+    },
+    "require-dev": {
+        "facade/ignition": "^2.5",
+        "fakerphp/faker": "^1.9.1",
+        "laravel/sail": "^1.0.1",
+        "laravel/ui": "^3.3",
+        "mockery/mockery": "^1.4.2",
+        "nunomaduro/collision": "^5.0",
+        "nunomaduro/larastan": "^0.7.15",
+        "phpunit/phpunit": "^9.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/",
+            "Modules\\": "Modules/"
+        },
+        "files": [
+            "app/Functions/utils.php",
+            "config/constants.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
